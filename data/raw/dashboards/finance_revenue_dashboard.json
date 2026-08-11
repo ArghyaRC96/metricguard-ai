@@ -1,0 +1,30 @@
+﻿{
+  "dashboard_id": "DASH-FIN-001",
+  "dashboard_name": "Finance Revenue Dashboard",
+  "owner_team": "Finance Analytics",
+  "business_domain": "finance",
+  "status": "active",
+  "last_reviewed": "2026-04-05",
+  "refresh_frequency": "daily",
+  "source_mart": "mart_finance_daily",
+  "metrics": [
+    {
+      "metric_name": "gross_revenue",
+      "display_name": "Gross Revenue",
+      "metric_version": "v1",
+      "source_column": "gross_revenue"
+    },
+    {
+      "metric_name": "net_revenue",
+      "display_name": "Net Revenue",
+      "metric_version": "v3",
+      "source_column": "net_revenue"
+    },
+    {
+      "metric_name": "total_orders",
+      "display_name": "Total Orders",
+      "metric_version": "v2",
+      "source_column": "paid_orders"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+﻿{
+  "dashboard_id": "DASH-EXEC-001",
+  "dashboard_name": "Executive KPI Dashboard",
+  "owner_team": "BI Platform",
+  "business_domain": "executive",
+  "status": "active",
+  "last_reviewed": "2026-01-15",
+  "refresh_frequency": "daily",
+  "source_mart": "mart_executive_daily",
+  "metrics": [
+    {
+      "metric_name": "total_orders",
+      "display_name": "Total Orders",
+      "metric_version": "v2",
+      "source_column": "total_orders"
+    },
+    {
+      "metric_name": "gross_revenue",
+      "display_name": "Gross Revenue",
+      "metric_version": "v1",
+      "source_column": "gross_revenue"
+    },
+    {
+      "metric_name": "net_revenue",
+      "display_name": "Net Revenue",
+      "metric_version": "v2",
+      "source_column": "net_revenue"
+    }
+  ]
+}

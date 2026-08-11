@@ -1,0 +1,33 @@
+﻿{
+  "dashboard_id": "DASH-OPS-001",
+  "dashboard_name": "Operations Dashboard",
+  "owner_team": "Operations Analytics",
+  "business_domain": "operations",
+  "status": "active",
+  "last_reviewed": "2025-10-15",
+  "refresh_frequency": "daily",
+  "source_mart": "mart_operations_daily",
+  "metrics": [
+    {
+      "metric_name": "total_orders",
+      "display_name": "Total Orders",
+      "metric_version": "v1",
+      "source_column": "total_orders"
+    },
+    {
+      "metric_name": "completed_orders",
+      "display_name": "Completed Orders",
+      "source_column": "completed_orders"
+    },
+    {
+      "metric_name": "shipped_orders",
+      "display_name": "Shipped Orders",
+      "source_column": "shipped_orders"
+    },
+    {
+      "metric_name": "returned_orders",
+      "display_name": "Returned Orders",
+      "source_column": "returned_orders"
+    }
+  ]
+}

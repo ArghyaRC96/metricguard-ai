@@ -1,0 +1,86 @@
+﻿version: 2
+
+models:
+
+  - name: stg_customers
+    description: Standardized customer records.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: stg_orders
+    description: Standardized order transactions.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: stg_order_items
+    description: Standardized order item transactions.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: stg_payments
+    description: Standardized payment and chargeback transactions.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: stg_refunds
+    description: Standardized refund transactions.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: stg_web_sessions
+    description: Standardized digital session activity.
+    meta:
+      layer: staging
+      owner: Data Analytics
+
+  - name: fct_orders
+    description: One analytical row per Northstar order.
+    meta:
+      layer: fact
+      owner: Data Analytics
+
+  - name: fct_web_sessions
+    description: One analytical row per digital session.
+    meta:
+      layer: fact
+      owner: Growth Analytics
+
+  - name: mart_finance_daily
+    description: Daily financial KPI mart.
+    meta:
+      layer: mart
+      owner: Finance Analytics
+      metric_versions:
+        net_revenue: v3
+        total_orders: v2
+
+  - name: mart_executive_daily
+    description: Daily executive KPI mart.
+    meta:
+      layer: mart
+      owner: BI Platform
+      metric_versions:
+        net_revenue: v2
+        total_orders: v2
+
+  - name: mart_operations_daily
+    description: Daily operational order mart.
+    meta:
+      layer: mart
+      owner: Operations Analytics
+      metric_versions:
+        total_orders: v1
+
+  - name: mart_growth_daily
+    description: Daily growth and digital funnel mart.
+    meta:
+      layer: mart
+      owner: Growth Analytics
+      metric_versions:
+        active_customers: v1
+        conversion_rate: v2

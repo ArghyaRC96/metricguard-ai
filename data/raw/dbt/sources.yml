@@ -1,0 +1,25 @@
+﻿version: 2
+
+sources:
+  - name: northstar_raw
+    description: Raw operational source tables for Northstar Commerce.
+    schema: raw
+
+    tables:
+      - name: raw_customers
+        description: Customer profiles and acquisition attributes.
+
+      - name: raw_orders
+        description: Order-level commerce transactions.
+
+      - name: raw_order_items
+        description: Product line items belonging to customer orders.
+
+      - name: raw_payments
+        description: Payment and chargeback transactions.
+
+      - name: raw_refunds
+        description: Refund transactions and refund status.
+
+      - name: raw_web_sessions
+        description: Website and mobile application session activity.

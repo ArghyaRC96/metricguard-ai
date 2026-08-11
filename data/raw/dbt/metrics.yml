@@ -1,0 +1,48 @@
+﻿version: 2
+
+metrics:
+
+  - name: net_revenue
+    label: Net Revenue
+    version: v3
+    status: active
+    owner: Finance Analytics
+    effective_from: 2026-04-01
+    source_model: fct_orders
+    expression: gross_revenue - discounts - completed_refunds - chargebacks
+
+  - name: total_orders
+    label: Total Orders
+    version: v2
+    status: active
+    owner: Finance Analytics
+    effective_from: 2025-12-01
+    source_model: fct_orders
+    expression: count of successfully paid orders
+
+  - name: active_customers
+    label: Active Customers
+    version: v2
+    status: active
+    owner: Customer Analytics
+    effective_from: 2026-03-01
+    source_model: fct_orders
+    expression: distinct customers with a successfully paid order in the previous 30 days
+
+  - name: conversion_rate
+    label: Conversion Rate
+    version: v2
+    status: active
+    owner: Growth Analytics
+    effective_from: 2026-06-01
+    source_model: fct_web_sessions
+    expression: completed checkouts divided by checkout starts
+
+  - name: refund_rate
+    label: Refund Rate
+    version: v2
+    status: active
+    owner: Finance Analytics
+    effective_from: 2026-02-01
+    source_model: fct_orders
+    expression: orders with completed refunds divided by paid orders
