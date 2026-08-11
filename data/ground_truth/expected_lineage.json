@@ -1,0 +1,28 @@
+﻿{
+  "edges": [
+    ["raw_customers", "stg_customers"],
+
+    ["raw_orders", "stg_orders"],
+    ["raw_order_items", "stg_order_items"],
+    ["raw_payments", "stg_payments"],
+    ["raw_refunds", "stg_refunds"],
+    ["raw_web_sessions", "stg_web_sessions"],
+
+    ["stg_orders", "fct_orders"],
+    ["stg_payments", "fct_orders"],
+    ["stg_refunds", "fct_orders"],
+
+    ["stg_web_sessions", "fct_web_sessions"],
+
+    ["fct_orders", "mart_finance_daily"],
+    ["fct_orders", "mart_executive_daily"],
+    ["fct_orders", "mart_operations_daily"],
+
+    ["fct_web_sessions", "mart_growth_daily"],
+
+    ["mart_finance_daily", "Finance Revenue Dashboard"],
+    ["mart_executive_daily", "Executive KPI Dashboard"],
+    ["mart_operations_daily", "Operations Dashboard"],
+    ["mart_growth_daily", "Growth & Marketing Dashboard"]
+  ]
+}

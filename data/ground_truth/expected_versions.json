@@ -1,0 +1,27 @@
+﻿{
+  "net_revenue": {
+    "current_version": "v3",
+    "effective_from": "2026-04-01",
+    "owner": "Finance Analytics"
+  },
+  "total_orders": {
+    "current_version": "v2",
+    "effective_from": "2025-12-01",
+    "owner": "Finance Analytics"
+  },
+  "active_customers": {
+    "current_version": "v2",
+    "effective_from": "2026-03-01",
+    "owner": "Customer Analytics"
+  },
+  "conversion_rate": {
+    "current_version": "v2",
+    "effective_from": "2026-06-01",
+    "owner": "Growth Analytics"
+  },
+  "refund_rate": {
+    "current_version": "v2",
+    "effective_from": "2026-02-01",
+    "owner": "Finance Analytics"
+  }
+}

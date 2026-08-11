@@ -1,0 +1,92 @@
+﻿[
+  {
+    "question_id": "Q001",
+    "required_facts": [
+      "Finance uses Net Revenue v3.",
+      "Executive uses Net Revenue v2.",
+      "Net Revenue v3 became effective on 2026-04-01.",
+      "Version 3 deducts posted chargebacks while Version 2 does not."
+    ],
+    "classification": "stale_version_conflict"
+  },
+  {
+    "question_id": "Q002",
+    "required_facts": [
+      "The current Net Revenue version is v3.",
+      "It became effective on 2026-04-01.",
+      "The definition subtracts discounts, completed refunds, and posted chargebacks from Gross Revenue."
+    ]
+  },
+  {
+    "question_id": "Q003",
+    "required_facts": [
+      "No.",
+      "The Executive KPI Dashboard uses Net Revenue v2.",
+      "The current enterprise version is v3."
+    ],
+    "classification": "stale_version_conflict"
+  },
+  {
+    "question_id": "Q004",
+    "required_facts": [
+      "Growth uses Active Customers v1.",
+      "Version 1 counts identified customers with recent digital activity.",
+      "The enterprise v2 definition requires at least one successfully paid order in the previous 30 days."
+    ],
+    "classification": "stale_semantic_definition"
+  },
+  {
+    "question_id": "Q005",
+    "required_facts": [
+      "No underlying data pipeline failure was identified.",
+      "Operations counts valid placed orders excluding cancellations.",
+      "Finance counts successfully paid orders.",
+      "The discrepancy is an expected semantic difference."
+    ],
+    "classification": "expected_semantic_difference"
+  },
+  {
+    "question_id": "Q006",
+    "required_facts": [
+      "The current Total Orders version is v2.",
+      "It counts successfully paid orders.",
+      "It became effective on 2025-12-01."
+    ]
+  },
+  {
+    "question_id": "Q007",
+    "required_facts": [
+      "Conversion Rate migrated to v2 on 2026-06-01.",
+      "Version 1 used distinct purchasing customers divided by total sessions.",
+      "Version 2 uses completed checkouts divided by checkout starts.",
+      "The change was expected and not a data defect."
+    ],
+    "classification": "expected_metric_migration"
+  },
+  {
+    "question_id": "Q008",
+    "required_facts": [
+      "Finance Revenue Dashboard depends on mart_finance_daily.",
+      "mart_finance_daily depends on fct_orders.",
+      "fct_orders depends on stg_orders, stg_payments, and stg_refunds.",
+      "Those staging models originate from raw_orders, raw_payments, and raw_refunds."
+    ]
+  },
+  {
+    "question_id": "Q009",
+    "required_facts": [
+      "The Executive KPI Dashboard is affected.",
+      "Its upstream mart is mart_executive_daily.",
+      "The mart and dashboard remain associated with Net Revenue v2."
+    ]
+  },
+  {
+    "question_id": "Q010",
+    "required_facts": [
+      "The current Refund Rate version is v2.",
+      "It is orders with completed refunds divided by paid orders.",
+      "Pending refunds are excluded.",
+      "Version 2 became effective on 2026-02-01."
+    ]
+  }
+]

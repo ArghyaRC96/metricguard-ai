@@ -1,0 +1,50 @@
+﻿[
+  {
+    "conflict_id": "CONFLICT-001",
+    "metric_name": "net_revenue",
+    "classification": "stale_version_conflict",
+    "severity": "high",
+    "asset_a": "Finance Revenue Dashboard",
+    "asset_a_version": "v3",
+    "asset_b": "Executive KPI Dashboard",
+    "asset_b_version": "v2",
+    "expected_cause": "Executive reporting does not deduct posted chargebacks.",
+    "is_true_governance_issue": true
+  },
+  {
+    "conflict_id": "CONFLICT-002",
+    "metric_name": "active_customers",
+    "classification": "stale_semantic_definition",
+    "severity": "medium",
+    "asset_a": "Enterprise Active Customers KPI",
+    "asset_a_version": "v2",
+    "asset_b": "Growth & Marketing Dashboard",
+    "asset_b_version": "v1",
+    "expected_cause": "Growth measures digital activity while the enterprise KPI requires a successfully paid order in the previous 30 days.",
+    "is_true_governance_issue": true
+  },
+  {
+    "conflict_id": "CONFLICT-003",
+    "metric_name": "total_orders",
+    "classification": "expected_semantic_difference",
+    "severity": "low",
+    "asset_a": "Finance Revenue Dashboard",
+    "asset_a_version": "v2",
+    "asset_b": "Operations Dashboard",
+    "asset_b_version": "v1",
+    "expected_cause": "Finance counts successfully paid orders while Operations tracks valid placed orders excluding cancellations.",
+    "is_true_governance_issue": false
+  },
+  {
+    "conflict_id": "CONFLICT-004",
+    "metric_name": "conversion_rate",
+    "classification": "expected_metric_migration",
+    "severity": "informational",
+    "asset_a": "Growth & Marketing Dashboard",
+    "asset_a_version": "v2",
+    "asset_b": "Historical Conversion Reporting",
+    "asset_b_version": "v1",
+    "expected_cause": "The enterprise definition intentionally changed from purchasing customers per session to completed checkouts per checkout start.",
+    "is_true_governance_issue": false
+  }
+]

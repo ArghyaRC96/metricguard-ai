@@ -1,0 +1,52 @@
+﻿[
+  {
+    "question_id": "Q001",
+    "category": "conflict_detection",
+    "question": "Why does the Executive KPI Dashboard report different Net Revenue from the Finance Revenue Dashboard after April 1, 2026?"
+  },
+  {
+    "question_id": "Q002",
+    "category": "version_detection",
+    "question": "What is the current approved version of Net Revenue and when did it become effective?"
+  },
+  {
+    "question_id": "Q003",
+    "category": "staleness_detection",
+    "question": "Is the Executive KPI Dashboard using the current Net Revenue definition?"
+  },
+  {
+    "question_id": "Q004",
+    "category": "semantic_conflict",
+    "question": "Why does the Growth & Marketing Dashboard report more Active Customers than the enterprise KPI?"
+  },
+  {
+    "question_id": "Q005",
+    "category": "semantic_classification",
+    "question": "Is the Total Orders disagreement between Operations and Finance a data pipeline failure?"
+  },
+  {
+    "question_id": "Q006",
+    "category": "version_detection",
+    "question": "What is the current enterprise definition of Total Orders?"
+  },
+  {
+    "question_id": "Q007",
+    "category": "metric_migration",
+    "question": "Why did Conversion Rate change in June 2026?"
+  },
+  {
+    "question_id": "Q008",
+    "category": "lineage",
+    "question": "What is the upstream lineage of Net Revenue shown on the Finance Revenue Dashboard?"
+  },
+  {
+    "question_id": "Q009",
+    "category": "impact_analysis",
+    "question": "Which reporting asset is affected by the stale Net Revenue v2 definition?"
+  },
+  {
+    "question_id": "Q010",
+    "category": "version_detection",
+    "question": "What is the current Refund Rate definition?"
+  }
+]
