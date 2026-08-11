@@ -108,3 +108,31 @@ Dashboards
 ### Next
 
 Build fact tables and business marts.
+
+---
+
+## 2026-08-11 — Phase 1.3B — Facts and Business Marts
+
+### Completed
+
+- Created `fct_orders`.
+- Created `fct_web_sessions`.
+- Created Finance Daily mart.
+- Created Executive Daily mart.
+- Created Operations Daily mart.
+- Created Growth Daily mart.
+
+### Architecture Decision
+
+Fact models remain reusable analytical event layers.
+
+Business marts represent team-specific analytical interpretations.
+
+### Intentional Conflict
+
+Finance uses Net Revenue Version 3 and deducts chargebacks.
+
+Executive uses Net Revenue Version 2 and does not deduct chargebacks.
+
+This creates MetricGuard's first deliberate version-aware metric discrepancy.
+

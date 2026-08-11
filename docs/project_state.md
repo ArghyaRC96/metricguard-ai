@@ -1,10 +1,10 @@
-# MetricGuard AI — Project State
+﻿# MetricGuard AI â€” Project State
 
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.3A — SQL Staging Layer Complete
-**Next Phase:** Phase 1.3B — Facts and Business Marts
+**Current Phase:** Phase 1.3B — Facts and Business Marts Complete
+**Next Phase:** Phase 1.4 — Metric Definitions and Version History
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## Core RAG Roadmap
 
-### Layer 1 — Build the Knowledge Base
+### Layer 1 â€” Build the Knowledge Base
 
 1. Collect source documents
 2. Load and parse text
@@ -33,7 +33,7 @@
 9. Create embeddings
 10. Store in vector database
 
-### Layer 2 — Answer a User Question
+### Layer 2 â€” Answer a User Question
 
 1. User asks
 2. Input guardrail
@@ -53,7 +53,7 @@
 16. Apply fallback if weak
 17. Write audit log
 
-### Layer 3 — Quality Control
+### Layer 3 â€” Quality Control
 
 1. Create evaluation questions
 2. Test retrieval
@@ -68,15 +68,15 @@
 
 MetricGuard will use a multi-agent workflow with three planned agents.
 
-### Agent 1 — Evidence Retrieval Agent
+### Agent 1 â€” Evidence Retrieval Agent
 
 Retrieves relevant evidence from the knowledge base.
 
-### Agent 2 — Metric Investigation Agent
+### Agent 2 â€” Metric Investigation Agent
 
 Investigates metric definitions, conflicts, versions, freshness, lineage, and downstream impact.
 
-### Agent 3 — Verification and Reporting Agent
+### Agent 3 â€” Verification and Reporting Agent
 
 Verifies whether retrieved evidence supports the conclusion and generates the structured final response.
 
@@ -119,17 +119,17 @@ Can:
 
 ```text
 Google Colab
-    ↓
+    â†“
 Experiment and validate
-    ↓
+    â†“
 Reusable logic identified
-    ↓
+    â†“
 src/metricguard/
-    ↓
+    â†“
 Production-style Python modules
-    ↓
+    â†“
 Automated tests
-    ↓
+    â†“
 Streamlit application
 ```
 
@@ -139,18 +139,18 @@ Streamlit application
 
 ```text
 metricguard-ai/
-├── notebooks/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── ground_truth/
-│   └── samples/
-├── src/metricguard/
-├── app/
-├── tests/
-├── configs/
-├── docs/
-└── outputs/
+â”œâ”€â”€ notebooks/
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ raw/
+â”‚   â”œâ”€â”€ processed/
+â”‚   â”œâ”€â”€ ground_truth/
+â”‚   â””â”€â”€ samples/
+â”œâ”€â”€ src/metricguard/
+â”œâ”€â”€ app/
+â”œâ”€â”€ tests/
+â”œâ”€â”€ configs/
+â”œâ”€â”€ docs/
+â””â”€â”€ outputs/
 ```
 
 ---
@@ -232,31 +232,31 @@ Planned metrics:
 
 ---
 
-## Flagship Metric Conflict — Net Revenue
+## Flagship Metric Conflict â€” Net Revenue
 
 ### Version 1
 
 Gross Revenue
-− Refunds
+âˆ’ Refunds
 
 ### Version 2
 
 Gross Revenue
-− Discounts
-− Refunds
+âˆ’ Discounts
+âˆ’ Refunds
 
-### Version 3 — Current
+### Version 3 â€” Current
 
 Gross Revenue
-− Discounts
-− Refunds
-− Chargebacks
+âˆ’ Discounts
+âˆ’ Refunds
+âˆ’ Chargebacks
 
 Planned inconsistency:
 
-* Finance Dashboard → V3
-* Executive Dashboard → V2
-* Legacy Monthly Report → V1
+* Finance Dashboard â†’ V3
+* Executive Dashboard â†’ V2
+* Legacy Monthly Report â†’ V1
 
 ---
 
@@ -290,7 +290,7 @@ Completed checkouts divided by checkout starts.
 
 # SQL Warehouse
 
-## Staging Layer — COMPLETE
+## Staging Layer â€” COMPLETE
 
 Created:
 
@@ -320,27 +320,27 @@ Major metric business logic is intentionally not applied at the staging layer.
 
 ```text
 raw_customers
-    ↓
+    â†“
 stg_customers
 
 raw_orders
-    ↓
+    â†“
 stg_orders
 
 raw_order_items
-    ↓
+    â†“
 stg_order_items
 
 raw_payments
-    ↓
+    â†“
 stg_payments
 
 raw_refunds
-    ↓
+    â†“
 stg_refunds
 
 raw_web_sessions
-    ↓
+    â†“
 stg_web_sessions
 ```
 
@@ -348,7 +348,7 @@ stg_web_sessions
 
 # Completed Work
 
-## Phase 0 — Project Foundation
+## Phase 0 â€” Project Foundation
 
 * GitHub repository created
 * Local repository cloned
@@ -360,14 +360,14 @@ stg_web_sessions
 * project `.venv` created
 * VS Code Python interpreter configured
 * Notebook 00 created
-* Colab ↔ GitHub workflow established
+* Colab â†” GitHub workflow established
 * `settings.yaml` created
 * README foundation created
 * system architecture documentation created
 * project version initialized at `0.1.0`
 * authentication/RBAC requirement defined
 
-## Phase 1.1 — Business Universe
+## Phase 1.1 â€” Business Universe
 
 * Northstar Commerce defined
 * business teams defined
@@ -375,23 +375,23 @@ stg_web_sessions
 * version conflicts designed
 * planned incidents and analyst notes defined
 
-## Phase 1.2 — Synthetic Raw Data
+## Phase 1.2 â€” Synthetic Raw Data
 
 * six operational datasets generated
 * relationship validation performed
 * CSV files exported
 * raw datasets committed to GitHub
 
-## Phase 1.3A — SQL Staging
+## Phase 1.3A â€” SQL Staging
 
 * six staging SQL models created
-* raw → staging lineage established
+* raw â†’ staging lineage established
 
 ---
 
 # Next Work
 
-## Phase 1.3B — Facts and Business Marts
+## Phase 1.3B â€” Facts and Business Marts
 
 Next planned work:
 
@@ -425,4 +425,38 @@ Whenever a major project phase is completed:
 5. Update this document
 6. Record the completed work in `docs/build_log.md`
 
+
+
+---
+
+## Phase 1.3B — Facts and Business Marts
+
+### Fact Models Created
+
+- `fct_orders.sql`
+- `fct_web_sessions.sql`
+
+### Business Marts Created
+
+- `mart_finance_daily.sql`
+- `mart_executive_daily.sql`
+- `mart_operations_daily.sql`
+- `mart_growth_daily.sql`
+
+### Intentional Metric Discrepancy Introduced
+
+Finance Net Revenue uses Version 3:
+
+Gross Revenue  
+- Discounts  
+- Refunds  
+- Chargebacks
+
+Executive Net Revenue uses Version 2:
+
+Gross Revenue  
+- Discounts  
+- Refunds
+
+The Executive mart therefore intentionally omits chargebacks and represents stale business logic.
 
