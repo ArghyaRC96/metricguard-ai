@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.3B — Facts and Business Marts Complete
-**Next Phase:** Phase 1.4 — Metric Definitions and Version History
+**Current Phase:** Phase 1.4 — Metric Definitions and Version History Complete
+**Next Phase:** Phase 1.5 — Dashboard Metadata and dbt-Style Documentation
 
 ---
 
@@ -459,4 +459,46 @@ Gross Revenue
 - Refunds
 
 The Executive mart therefore intentionally omits chargebacks and represents stale business logic.
+
+
+---
+
+## Phase 1.4 — Metric Definitions and Version History
+
+### Versioned Metrics Created
+
+#### Net Revenue
+- v1: Gross Revenue - Refunds
+- v2: Gross Revenue - Discounts - Refunds
+- v3: Gross Revenue - Discounts - Refunds - Chargebacks
+- Current version: v3
+
+#### Total Orders
+- v1: All placed orders except cancelled orders
+- v2: Successfully paid orders
+- Current version: v2
+
+#### Active Customers
+- v1: Identified customers with digital activity during the previous 30 days
+- v2: Customers with a successfully paid order during the previous 30 days
+- Current version: v2
+
+#### Conversion Rate
+- v1: Distinct purchasing customers / Total sessions
+- v2: Completed checkouts / Checkout starts
+- Current version: v2
+
+#### Refund Rate
+- v1: Orders with any refund request / Paid orders
+- v2: Orders with completed refunds / Paid orders
+- Current version: v2
+
+### Intentional Governance Issues
+
+- Executive Net Revenue remains on deprecated v2 while Finance uses active v3.
+- Operations Total Orders follows placed-order logic resembling deprecated v1.
+- Growth-oriented Active Customer logic differs from the current enterprise purchasing definition.
+- Legacy Marketing Conversion Rate logic differs from the current checkout-funnel definition.
+
+Business-rule Markdown documents and SQL metric definitions now provide independent evidence sources for later conflict detection.
 

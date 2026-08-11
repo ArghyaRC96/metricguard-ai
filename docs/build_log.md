@@ -136,3 +136,32 @@ Executive uses Net Revenue Version 2 and does not deduct chargebacks.
 
 This creates MetricGuard's first deliberate version-aware metric discrepancy.
 
+
+---
+
+## 2026-08-11 — Phase 1.4 — Metric Definitions and Version History
+
+### Completed
+
+Created version-controlled business rules and SQL definitions for:
+
+- Net Revenue
+- Total Orders
+- Active Customers
+- Conversion Rate
+- Refund Rate
+
+### Architecture Decision
+
+Metric definitions are represented in more than one source type.
+
+Business-rule Markdown documents capture governance history and effective dates.
+
+SQL files capture executable metric logic.
+
+This allows MetricGuard to compare documentation against implementation rather than relying on a single source of truth.
+
+### Conflict Design
+
+Several downstream assets intentionally continue using older or semantically different metric definitions so that version-aware and conflict-aware retrieval can be evaluated later.
+
