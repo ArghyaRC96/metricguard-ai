@@ -1,0 +1,32 @@
+project:
+  name: metricguard-ai
+  version: "0.1.0"
+  environment: development
+
+retrieval:
+  top_k: 5
+  rerank_enabled: false
+
+chunking:
+  strategy: recursive
+  chunk_size: 800
+  chunk_overlap: 120
+
+embeddings:
+  model: null
+
+vector_database:
+  provider: qdrant
+  collection_name: metricguard
+
+confidence:
+  minimum_threshold: 0.60
+
+security:
+  authentication_enabled: true
+  role_based_access_control: true
+  default_role: viewer
+
+logging:
+  level: INFO
+  audit_logging_enabled: true
