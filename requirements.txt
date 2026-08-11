@@ -1,0 +1,34 @@
+# ============================================================
+# MetricGuard AI - Python Dependencies
+# ============================================================
+#
+# Dependencies will be added incrementally as each subsystem
+# is implemented and validated.
+#
+# Planned dependency groups:
+#
+# Core configuration / schemas
+# - python-dotenv
+# - pydantic
+# - PyYAML
+#
+# Document and SQL processing
+# - sqlglot
+#
+# Graph / lineage
+# - networkx
+#
+# Embeddings and retrieval
+# - sentence-transformers
+# - qdrant-client
+#
+# Agent orchestration
+# - langgraph
+#
+# Application
+# - streamlit
+#
+# Evaluation / testing
+# - pytest
+#
+# Exact versions will be pinned after environment validation.
