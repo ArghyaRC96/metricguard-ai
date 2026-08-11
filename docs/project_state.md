@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.4 — Metric Definitions and Version History Complete
-**Next Phase:** Phase 1.5 — Dashboard Metadata and dbt-Style Documentation
+**Current Phase:** Phase 1.5 — Dashboard Metadata and dbt-Style Documentation Complete
+**Next Phase:** Phase 1.6 — Incident Tickets and Analyst Notes
 
 ---
 
@@ -501,4 +501,53 @@ The Executive mart therefore intentionally omits chargebacks and represents stal
 - Legacy Marketing Conversion Rate logic differs from the current checkout-funnel definition.
 
 Business-rule Markdown documents and SQL metric definitions now provide independent evidence sources for later conflict detection.
+
+
+---
+
+## Phase 1.5 — Dashboard Metadata and dbt-Style Documentation
+
+### Dashboard Metadata Created
+
+- Finance Revenue Dashboard
+- Executive KPI Dashboard
+- Operations Dashboard
+- Growth & Marketing Dashboard
+
+### Dashboard Version State
+
+Finance Revenue Dashboard:
+- Net Revenue v3
+- Total Orders v2
+
+Executive KPI Dashboard:
+- Net Revenue v2
+- Total Orders v2
+
+Operations Dashboard:
+- Total Orders v1
+
+Growth & Marketing Dashboard:
+- Active Customers v1
+- Conversion Rate v2
+
+### dbt-Style Documentation Created
+
+- `sources.yml`
+- `schema.yml`
+- `metrics.yml`
+
+### Governance Design
+
+The current enterprise metric definitions are documented in `metrics.yml`.
+
+Intentional stale downstream assets remain linked to older metric versions.
+
+MetricGuard will therefore have multiple independent evidence sources for version conflicts:
+
+- SQL metric definitions
+- business-rule documents
+- mart SQL
+- dashboard JSON metadata
+- dbt-style YAML documentation
 

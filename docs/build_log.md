@@ -165,3 +165,34 @@ This allows MetricGuard to compare documentation against implementation rather t
 
 Several downstream assets intentionally continue using older or semantically different metric definitions so that version-aware and conflict-aware retrieval can be evaluated later.
 
+
+---
+
+## 2026-08-11 — Phase 1.5 — Dashboard Metadata and dbt-Style Documentation
+
+### Completed
+
+Created structured metadata for four Northstar dashboards.
+
+Created dbt-style documentation for:
+
+- source tables
+- staging models
+- fact models
+- business marts
+- current enterprise metric definitions
+
+### Architecture Decision
+
+Dashboard metadata explicitly records the metric version consumed by each reporting asset.
+
+Current enterprise definitions are separately represented in `metrics.yml`.
+
+This enables MetricGuard to compare downstream dashboard usage against approved metric governance documentation.
+
+### Intentional Conflicts Preserved
+
+- Executive Net Revenue remains on v2 while enterprise Net Revenue is v3.
+- Operations Total Orders remains on v1 while enterprise Total Orders is v2.
+- Growth Active Customers remains on v1 while enterprise Active Customers is v2.
+
