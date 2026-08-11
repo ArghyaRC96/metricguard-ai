@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.6 — Incident Tickets and Analyst Notes Complete
-**Next Phase:** Phase 1.7 — Ground Truth and Evaluation Dataset
+**Current Phase:** Phase 1.7 — Ground Truth and Evaluation Dataset Complete
+**Next Phase:** Phase 2 — Document Loading and Parsing
 
 ---
 
@@ -596,4 +596,58 @@ The source universe currently includes:
 - analyst notes
 
 This enables later retrieval and reasoning across heterogeneous evidence types.
+
+
+---
+
+## Phase 1.7 — Ground Truth and Evaluation Dataset
+
+### Ground-Truth Files Created
+
+- `expected_versions.json`
+- `known_conflicts.json`
+- `expected_lineage.json`
+- `evaluation_questions.json`
+- `expected_answers.json`
+
+### Evaluation Set
+
+Ten initial evaluation questions were created covering:
+
+- conflict detection
+- metric-version detection
+- staleness detection
+- semantic conflicts
+- expected semantic differences
+- metric migration
+- lineage
+- impact analysis
+
+### Evaluation Principle
+
+Files under `data/ground_truth/` are evaluation-only resources.
+
+They must not be ingested into the production RAG knowledge base or made
+available to the answering agents.
+
+They serve as the hidden reference set used to compare predicted MetricGuard
+behavior against known correct outcomes.
+
+### Current Synthetic Knowledge Base
+
+Northstar Commerce now contains:
+
+- synthetic operational CSV tables
+- staging SQL
+- fact SQL
+- business marts
+- versioned metric SQL
+- versioned business-rule documents
+- dashboard JSON metadata
+- dbt-style YAML documentation
+- incident tickets
+- analyst notes
+- hidden evaluation ground truth
+
+Phase 1 synthetic knowledge-base construction is now complete.
 

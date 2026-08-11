@@ -228,3 +228,36 @@ v3.
 INC-003 establishes that the Operations versus Finance Total Orders
 discrepancy is an expected semantic difference rather than a data failure.
 
+
+---
+
+## 2026-08-11 — Phase 1.7 — Ground Truth and Evaluation Dataset
+
+### Completed
+
+Created the hidden evaluation reference set for MetricGuard.
+
+Ground truth now defines:
+
+- approved current metric versions
+- known conflicts
+- expected conflict classifications
+- correct lineage relationships
+- evaluation questions
+- required answer facts
+
+### Architecture Decision
+
+Ground-truth files are strictly separated from the RAG knowledge base.
+
+MetricGuard must derive answers from real synthetic evidence sources rather
+than retrieving the expected answers directly.
+
+This prevents evaluation leakage and enables meaningful testing of retrieval,
+reasoning, conflict detection, lineage, and answer generation.
+
+### Phase 1 Status
+
+The Northstar Commerce synthetic data universe is complete and ready for
+document ingestion and parsing.
+
