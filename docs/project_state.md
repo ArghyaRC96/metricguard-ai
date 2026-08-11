@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.7 — Ground Truth and Evaluation Dataset Complete
-**Next Phase:** Phase 2 — Document Loading and Parsing
+**Current Phase:** Phase 2.1 — Document Loading and Parsing Prototype Complete
+**Next Phase:** Phase 2.2 — Productionize the Ingestion Parser
 
 ---
 
@@ -650,4 +650,55 @@ Northstar Commerce now contains:
 - hidden evaluation ground truth
 
 Phase 1 synthetic knowledge-base construction is now complete.
+
+
+---
+
+## Phase 2.1 — Document Loading and Parsing
+
+### Completed
+
+Created `02_parse_documents.ipynb`.
+
+The ingestion prototype now supports:
+
+- SQL
+- Markdown
+- JSON
+- YAML
+- CSV
+
+### Parsing Architecture
+
+All heterogeneous sources are converted into a canonical parsed-document representation containing:
+
+- document ID
+- source path
+- file name
+- source type
+- content hash
+- normalized content
+- optional structured data
+
+### CSV Strategy
+
+Operational CSV tables are summarized rather than converted into one RAG
+document per row.
+
+The complete structured records remain available for analytical processing and
+validation outside semantic retrieval.
+
+### Evaluation Protection
+
+`data/ground_truth/` is explicitly excluded from source discovery.
+
+Automated assertions verify that evaluation data does not enter the RAG
+knowledge base.
+
+### Generated Artifacts
+
+- `data/processed/parsed_documents.jsonl`
+- `data/processed/parse_manifest.csv`
+
+These files are reproducible pipeline outputs and remain excluded from Git.
 

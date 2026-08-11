@@ -261,3 +261,38 @@ reasoning, conflict detection, lineage, and answer generation.
 The Northstar Commerce synthetic data universe is complete and ready for
 document ingestion and parsing.
 
+
+---
+
+## 2026-08-11 — Phase 2.1 — Document Loading and Parsing
+
+### Completed
+
+Implemented the first heterogeneous ingestion prototype in Google Colab.
+
+Supported formats:
+
+- SQL
+- Markdown
+- JSON
+- YAML
+- CSV
+
+### Architecture Decision
+
+All source formats are normalized into one canonical document structure before
+chunking.
+
+Structured CSV operational data is represented to RAG through dataset-level
+summaries rather than row-level embeddings.
+
+### Safety Decision
+
+Ground-truth evaluation resources are explicitly excluded from ingestion to
+prevent evaluation leakage.
+
+### Next
+
+Move the validated parser implementation from the experimental notebook into
+`src/metricguard/ingestion/` and add automated tests.
+
