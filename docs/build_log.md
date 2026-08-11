@@ -196,3 +196,35 @@ This enables MetricGuard to compare downstream dashboard usage against approved 
 - Operations Total Orders remains on v1 while enterprise Total Orders is v2.
 - Growth Active Customers remains on v1 while enterprise Active Customers is v2.
 
+
+---
+
+## 2026-08-11 — Phase 1.6 — Incident Tickets and Analyst Notes
+
+### Completed
+
+Created four incident tickets and four analyst investigation notes.
+
+### Design Decision
+
+Not every dashboard disagreement represents a defect.
+
+The synthetic knowledge base intentionally includes:
+
+- true stale-version conflicts
+- semantic metric disagreements
+- resolved expected behavior
+- legitimate differences between team-specific operational metrics
+
+This will allow MetricGuard evaluation to test whether the system can
+distinguish an actual governance problem from an expected business difference.
+
+### Important Evidence
+
+INC-001 and the Revenue v3 migration note independently support the conclusion
+that the Executive KPI Dashboard remains on Net Revenue v2 while Finance uses
+v3.
+
+INC-003 establishes that the Operations versus Finance Total Orders
+discrepancy is an expected semantic difference rather than a data failure.
+

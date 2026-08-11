@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 1.5 — Dashboard Metadata and dbt-Style Documentation Complete
-**Next Phase:** Phase 1.6 — Incident Tickets and Analyst Notes
+**Current Phase:** Phase 1.6 — Incident Tickets and Analyst Notes Complete
+**Next Phase:** Phase 1.7 — Ground Truth and Evaluation Dataset
 
 ---
 
@@ -550,4 +550,50 @@ MetricGuard will therefore have multiple independent evidence sources for versio
 - mart SQL
 - dashboard JSON metadata
 - dbt-style YAML documentation
+
+
+---
+
+## Phase 1.6 — Incident Tickets and Analyst Notes
+
+### Incident Tickets Created
+
+- INC-001 — Executive vs Finance Net Revenue mismatch
+- INC-002 — Active Customer definition mismatch
+- INC-003 — Operations vs Finance Total Orders discrepancy
+- INC-004 — Conversion Rate migration change
+
+### Incident Types
+
+The incident set intentionally contains different classes of discrepancy:
+
+- stale metric-version problems
+- semantic-definition conflicts
+- legitimate business differences
+- expected metric migration effects
+
+### Analyst Notes Created
+
+- Revenue v3 migration notes
+- Active Customer definition review
+- Total Orders semantic review
+- Conversion Rate migration review
+
+### Knowledge-Base Design
+
+MetricGuard now has human-generated evidence in addition to structured system
+metadata.
+
+The source universe currently includes:
+
+- CSV operational tables
+- SQL transformations
+- SQL metric definitions
+- Markdown business rules
+- JSON dashboard metadata
+- dbt-style YAML documentation
+- incident tickets
+- analyst notes
+
+This enables later retrieval and reasoning across heterogeneous evidence types.
 
