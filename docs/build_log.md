@@ -296,3 +296,43 @@ prevent evaluation leakage.
 Move the validated parser implementation from the experimental notebook into
 `src/metricguard/ingestion/` and add automated tests.
 
+
+---
+
+## 2026-08-15 — Phase 2.2 — Production Ingestion Parser
+
+### Completed
+
+Moved the validated heterogeneous parsing prototype from Google Colab into
+`src/metricguard/ingestion/`.
+
+Introduced:
+
+- typed canonical parsed-document model
+- format-specific parser module
+- reusable ingestion pipeline
+- deterministic SHA-256 document identity
+- parser validation
+- JSONL output
+- parsing manifest
+- automated pytest coverage
+- editable local MetricGuard package installation
+
+### Engineering Decision
+
+Notebook code is used for experimentation and validation.
+
+Once validated, reusable logic is refactored into the MetricGuard source
+package and covered by automated tests.
+
+### Retrieval Decision
+
+Reranking is no longer optional.
+
+The production retrieval architecture must rerank initially retrieved evidence
+before downstream conflict, version, freshness, lineage, and answer reasoning.
+
+### Next
+
+Implement source-aware chunking and metadata enrichment.
+

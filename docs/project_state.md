@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 2.1 — Document Loading and Parsing Prototype Complete
-**Next Phase:** Phase 2.2 — Productionize the Ingestion Parser
+**Current Phase:** Phase 2.2 — Production Ingestion Parser Complete
+**Next Phase:** Phase 3 — Chunking and Metadata Enrichment
 
 ---
 
@@ -701,4 +701,74 @@ knowledge base.
 - `data/processed/parse_manifest.csv`
 
 These files are reproducible pipeline outputs and remain excluded from Git.
+
+
+---
+
+## Phase 2.2 — Production Ingestion Parser
+
+### Completed
+
+The heterogeneous parser prototype from `02_parse_documents.ipynb` has been
+refactored into reusable production-style Python modules.
+
+Created:
+
+- `src/metricguard/ingestion/models.py`
+- `src/metricguard/ingestion/parsers.py`
+- `src/metricguard/ingestion/pipeline.py`
+- `tests/test_ingestion.py`
+- `pyproject.toml`
+
+### Supported Source Types
+
+- SQL
+- Markdown
+- JSON
+- YAML
+- CSV
+
+### Production Architecture
+
+The ingestion pipeline now:
+
+1. discovers supported source files
+2. dispatches files to format-specific parsers
+3. calculates SHA-256 source hashes
+4. converts sources into canonical ParsedDocument objects
+5. validates parsed documents
+6. blocks ground-truth evaluation leakage
+7. writes reproducible JSONL documents
+8. writes an ingestion manifest
+
+### Testing
+
+Automated ingestion tests validate:
+
+- source discovery
+- ground-truth exclusion
+- SQL parsing
+- complete knowledge-base parsing
+- unique document IDs
+- CSV dataset-summary behavior
+
+### Package Architecture
+
+MetricGuard is now installable as an editable Python package using
+`pyproject.toml`.
+
+Reusable application code can be imported directly from `metricguard`.
+
+### Retrieval Architecture Update
+
+Reranking is now a mandatory component of MetricGuard retrieval.
+
+The configured retrieval flow will be:
+
+initial retrieval
+→ metadata filtering
+→ reranking
+→ version/freshness/lineage reasoning
+
+`rerank_enabled` is now set to true in the project configuration.
 
