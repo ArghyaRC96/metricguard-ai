@@ -1,10 +1,10 @@
-﻿# MetricGuard AI â€” Project State
+# MetricGuard AI â€” Project State
 
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 2.2 — Production Ingestion Parser Complete
-**Next Phase:** Phase 3 — Chunking and Metadata Enrichment
+**Current Phase:** Phase 3.2 — Production Chunking and Metadata Complete
+**Next Phase:** Phase 4 — Version and Freshness Intelligence
 
 ---
 
@@ -772,3 +772,79 @@ initial retrieval
 
 `rerank_enabled` is now set to true in the project configuration.
 
+
+---
+
+## Phase 3.2 — Production Chunking and Metadata
+
+### Completed
+
+The source-aware chunking and metadata prototype from
+`03_chunk_metadata.ipynb` has been moved into reusable production-style
+Python modules.
+
+### Production Modules
+
+Created:
+
+- `src/metricguard/chunking/models.py`
+- `src/metricguard/chunking/splitters.py`
+- `src/metricguard/chunking/pipeline.py`
+- `src/metricguard/metadata/inference.py`
+- `src/metricguard/metadata/extractors.py`
+
+### Chunking Strategies
+
+MetricGuard now uses source-aware chunking:
+
+- Markdown: heading-aware splitting
+- SQL: SQL-friendly recursive splitting
+- JSON/YAML: structure-aware splitting
+- CSV: dataset-summary splitting
+
+Logical sections are preserved when possible and oversized sections use
+recursive fallback splitting.
+
+### Chunk Metadata
+
+Each retrieval-ready chunk contains provenance metadata including:
+
+- document ID
+- source path
+- file name
+- source type
+- asset type
+- content hash
+- chunk index
+- chunk count
+
+Additional source metadata is inferred or extracted where available,
+including:
+
+- metric name
+- metric version
+- dashboard ID
+- dashboard name
+- source mart
+- owner
+- business domain
+- dashboard metric versions
+- incident attributes
+- analyst-note attributes
+
+### Validation
+
+Automated tests now cover ingestion, metadata inference/extraction,
+source-aware chunking, unique identifiers, provenance metadata, and
+ground-truth leakage prevention.
+
+### Current Retrieval Architecture
+
+Reranking remains mandatory.
+
+Future retrieval flow:
+
+initial vector retrieval
+→ metadata filtering
+→ mandatory reranking
+→ version/freshness/lineage reasoning

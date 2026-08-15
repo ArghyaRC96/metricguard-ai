@@ -1,10 +1,10 @@
-# MetricGuard AI — Build Log
+# MetricGuard AI â€” Build Log
 
 This document records major implementation milestones and architectural decisions made during development.
 
 ---
 
-## 2026-08-11 — Project Foundation
+## 2026-08-11 â€” Project Foundation
 
 ### Completed
 
@@ -16,7 +16,7 @@ This document records major implementation milestones and architectural decision
 * Installed Python and created project-specific `.venv`.
 * Configured VS Code interpreter.
 * Created `00_project_setup.ipynb`.
-* Established Google Colab ↔ GitHub workflow.
+* Established Google Colab â†” GitHub workflow.
 * Added initial application configuration.
 * Added README and architecture documentation.
 
@@ -26,7 +26,7 @@ Experiments will be performed in notebooks, while reusable application logic wil
 
 ---
 
-## 2026-08-11 — Security Architecture
+## 2026-08-11 â€” Security Architecture
 
 ### Decision
 
@@ -38,7 +38,7 @@ Only authorized/admin users can modify the knowledge base or trigger ingestion.
 
 ---
 
-## 2026-08-11 — Northstar Commerce Created
+## 2026-08-11 â€” Northstar Commerce Created
 
 ### Decision
 
@@ -63,7 +63,7 @@ Core metrics:
 
 ---
 
-## 2026-08-11 — Synthetic Operational Dataset
+## 2026-08-11 â€” Synthetic Operational Dataset
 
 ### Completed
 
@@ -83,7 +83,7 @@ Synthetic records are deterministic using random seed `42`.
 
 ---
 
-## 2026-08-11 — SQL Staging Layer
+## 2026-08-11 â€” SQL Staging Layer
 
 ### Completed
 
@@ -95,13 +95,13 @@ Current warehouse flow:
 
 ```text
 Raw Operational Data
-        ↓
+        â†“
 Staging Layer
-        ↓
+        â†“
 Facts / Marts
-        ↓
+        â†“
 Metrics
-        ↓
+        â†“
 Dashboards
 ```
 
@@ -111,7 +111,7 @@ Build fact tables and business marts.
 
 ---
 
-## 2026-08-11 — Phase 1.3B — Facts and Business Marts
+## 2026-08-11 â€” Phase 1.3B â€” Facts and Business Marts
 
 ### Completed
 
@@ -139,7 +139,7 @@ This creates MetricGuard's first deliberate version-aware metric discrepancy.
 
 ---
 
-## 2026-08-11 — Phase 1.4 — Metric Definitions and Version History
+## 2026-08-11 â€” Phase 1.4 â€” Metric Definitions and Version History
 
 ### Completed
 
@@ -168,7 +168,7 @@ Several downstream assets intentionally continue using older or semantically dif
 
 ---
 
-## 2026-08-11 — Phase 1.5 — Dashboard Metadata and dbt-Style Documentation
+## 2026-08-11 â€” Phase 1.5 â€” Dashboard Metadata and dbt-Style Documentation
 
 ### Completed
 
@@ -199,7 +199,7 @@ This enables MetricGuard to compare downstream dashboard usage against approved 
 
 ---
 
-## 2026-08-11 — Phase 1.6 — Incident Tickets and Analyst Notes
+## 2026-08-11 â€” Phase 1.6 â€” Incident Tickets and Analyst Notes
 
 ### Completed
 
@@ -231,7 +231,7 @@ discrepancy is an expected semantic difference rather than a data failure.
 
 ---
 
-## 2026-08-11 — Phase 1.7 — Ground Truth and Evaluation Dataset
+## 2026-08-11 â€” Phase 1.7 â€” Ground Truth and Evaluation Dataset
 
 ### Completed
 
@@ -264,7 +264,7 @@ document ingestion and parsing.
 
 ---
 
-## 2026-08-11 — Phase 2.1 — Document Loading and Parsing
+## 2026-08-11 â€” Phase 2.1 â€” Document Loading and Parsing
 
 ### Completed
 
@@ -299,7 +299,7 @@ Move the validated parser implementation from the experimental notebook into
 
 ---
 
-## 2026-08-15 — Phase 2.2 — Production Ingestion Parser
+## 2026-08-15 â€” Phase 2.2 â€” Production Ingestion Parser
 
 ### Completed
 
@@ -336,3 +336,41 @@ before downstream conflict, version, freshness, lineage, and answer reasoning.
 
 Implement source-aware chunking and metadata enrichment.
 
+
+---
+
+## 2026-08-15 — Phase 3.2 — Production Chunking and Metadata
+
+### Completed
+
+Moved validated source-aware chunking and metadata logic from the
+experimental notebook into the MetricGuard production package.
+
+Added dedicated chunking and metadata modules and automated tests.
+
+### Architecture Decision
+
+MetricGuard does not apply identical fixed-size splitting to every source.
+
+Chunking strategy depends on document structure and source type, while
+recursive splitting remains the fallback for oversized logical sections.
+
+### Metadata Decision
+
+Retrieval chunks carry strong provenance and source-level metadata before
+embedding.
+
+Current metadata establishes the foundation for later:
+
+- filtering
+- citations
+- version analysis
+- freshness analysis
+- lineage
+- impact analysis
+- reranking
+- auditability
+
+### Next
+
+Implement explicit metric-version authority and freshness intelligence.
