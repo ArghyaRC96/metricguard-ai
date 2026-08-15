@@ -1,11 +1,11 @@
-project:
+﻿project:
   name: metricguard-ai
   version: "0.1.0"
   environment: development
 
 retrieval:
   top_k: 5
-  rerank_enabled: false
+  rerank_enabled: true
 
 chunking:
   strategy: recursive

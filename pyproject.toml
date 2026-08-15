@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metricguard-ai"
+version = "0.1.0"
+description = "Conflict-aware Agentic RAG for analytics metric governance."
+requires-python = ">=3.11"
+
+dependencies = [
+    "pandas",
+    "PyYAML"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
