@@ -1,12 +1,12 @@
 # MetricGuard AI - Validated Dependencies
-
 pandas==3.0.5
 PyYAML==6.0.3
 pytest==9.1.1
 langchain-text-splitters==1.1.2
 sqlglot==30.17.0
 networkx==3.6.1
-
 pydantic>=2,<3
 google-genai
 langgraph
+qdrant-client
+sentence-transformers
