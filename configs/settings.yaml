@@ -4,8 +4,10 @@ project:
   environment: development
 
 retrieval:
-  top_k: 5
+  candidate_top_k: 20
+  final_top_k: 5
   rerank_enabled: true
+  reranker_model: cross-encoder/ms-marco-MiniLM-L6-v2
 
 chunking:
   strategy: recursive
@@ -30,6 +32,7 @@ security:
 logging:
   level: INFO
   audit_logging_enabled: true
+
 freshness:
   warning_after_days: 120
   stale_after_days: 180
