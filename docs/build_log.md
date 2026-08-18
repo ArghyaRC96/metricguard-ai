@@ -1,10 +1,10 @@
-# MetricGuard AI ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Build Log
+# MetricGuard AI ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Build Log
 
 This document records major implementation milestones and architectural decisions made during development.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project Foundation
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Project Foundation
 
 ### Completed
 
@@ -16,7 +16,7 @@ This document records major implementation milestones and architectural decision
 * Installed Python and created project-specific `.venv`.
 * Configured VS Code interpreter.
 * Created `00_project_setup.ipynb`.
-* Established Google Colab ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Â GitHub workflow.
+* Established Google Colab ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â GitHub workflow.
 * Added initial application configuration.
 * Added README and architecture documentation.
 
@@ -26,7 +26,7 @@ Experiments will be performed in notebooks, while reusable application logic wil
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Security Architecture
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Security Architecture
 
 ### Decision
 
@@ -38,7 +38,7 @@ Only authorized/admin users can modify the knowledge base or trigger ingestion.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Northstar Commerce Created
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Northstar Commerce Created
 
 ### Decision
 
@@ -63,7 +63,7 @@ Core metrics:
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Synthetic Operational Dataset
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Synthetic Operational Dataset
 
 ### Completed
 
@@ -83,7 +83,7 @@ Synthetic records are deterministic using random seed `42`.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SQL Staging Layer
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â SQL Staging Layer
 
 ### Completed
 
@@ -95,13 +95,13 @@ Current warehouse flow:
 
 ```text
 Raw Operational Data
-        ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Staging Layer
-        ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Facts / Marts
-        ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Metrics
-        ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Dashboards
 ```
 
@@ -111,7 +111,7 @@ Build fact tables and business marts.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 1.3B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Facts and Business Marts
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 1.3B ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Facts and Business Marts
 
 ### Completed
 
@@ -139,7 +139,7 @@ This creates MetricGuard's first deliberate version-aware metric discrepancy.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 1.4 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Metric Definitions and Version History
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 1.4 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Metric Definitions and Version History
 
 ### Completed
 
@@ -168,7 +168,7 @@ Several downstream assets intentionally continue using older or semantically dif
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 1.5 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Dashboard Metadata and dbt-Style Documentation
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 1.5 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Dashboard Metadata and dbt-Style Documentation
 
 ### Completed
 
@@ -199,7 +199,7 @@ This enables MetricGuard to compare downstream dashboard usage against approved 
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 1.6 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Incident Tickets and Analyst Notes
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 1.6 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Incident Tickets and Analyst Notes
 
 ### Completed
 
@@ -231,7 +231,7 @@ discrepancy is an expected semantic difference rather than a data failure.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 1.7 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Ground Truth and Evaluation Dataset
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 1.7 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Ground Truth and Evaluation Dataset
 
 ### Completed
 
@@ -264,7 +264,7 @@ document ingestion and parsing.
 
 ---
 
-## 2026-08-11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 2.1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Document Loading and Parsing
+## 2026-08-11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 2.1 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Document Loading and Parsing
 
 ### Completed
 
@@ -299,7 +299,7 @@ Move the validated parser implementation from the experimental notebook into
 
 ---
 
-## 2026-08-15 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 2.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Production Ingestion Parser
+## 2026-08-15 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Phase 2.2 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Production Ingestion Parser
 
 ### Completed
 
@@ -339,7 +339,7 @@ Implement source-aware chunking and metadata enrichment.
 
 ---
 
-## 2026-08-15 Ã¢â‚¬â€ Phase 3.2 Ã¢â‚¬â€ Production Chunking and Metadata
+## 2026-08-15 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Phase 3.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Production Chunking and Metadata
 
 ### Completed
 
@@ -377,7 +377,7 @@ Implement explicit metric-version authority and freshness intelligence.
 
 ---
 
-## 2026-08-18 â€” Phase 4.2 â€” Governance-Enriched Retrieval Chunks
+## 2026-08-18 Ã¢â‚¬â€ Phase 4.2 Ã¢â‚¬â€ Governance-Enriched Retrieval Chunks
 
 ### Completed
 
@@ -407,7 +407,7 @@ Build SQL lineage extraction and downstream impact mapping.
 
 ---
 
-## 2026-08-18 — Phase 5.1 — Production SQL Lineage and Impact
+## 2026-08-18 â€” Phase 5.1 â€” Production SQL Lineage and Impact
 
 ### Completed
 
@@ -440,3 +440,32 @@ and evidence.
 
 Enrich retrieval chunks with lineage and impact information and build Notebook
 04 for inspection and visualization.
+
+---
+
+## 2026-08-18 — Phase 5.2 — Lineage-Enriched Retrieval Layer
+
+### Completed
+
+Integrated deterministic lineage and downstream-impact relationships into
+retrieval chunks.
+
+The final pre-embedding knowledge representation now combines semantic content
+with governance and graph intelligence.
+
+### Architecture
+
+Production ingestion, chunking, metadata, governance, and lineage components
+are composed into one deterministic enrichment pipeline.
+
+The resulting chunk objects are ready for embedding generation and Qdrant
+payload storage.
+
+### Notebook
+
+Added Notebook 04 for lineage inspection, focused graph visualization, and
+evaluation against the hidden expected-lineage reference.
+
+### Next
+
+Embeddings and Qdrant vector storage.

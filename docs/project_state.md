@@ -1,10 +1,10 @@
-# MetricGuard AI ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project State
+# MetricGuard AI ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Project State
 
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 5.1 — Production SQL Lineage and Impact Engine Complete
-**Next Phase:** Phase 5.2 — Lineage-Enriched Retrieval Chunks and Notebook 04
+**Current Phase:** Phase 5.2 — Lineage-Enriched Retrieval Layer Complete
+**Next Phase:** Phase 6 — Embeddings and Qdrant Vector Database
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## Core RAG Roadmap
 
-### Layer 1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Build the Knowledge Base
+### Layer 1 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Build the Knowledge Base
 
 1. Collect source documents
 2. Load and parse text
@@ -33,7 +33,7 @@
 9. Create embeddings
 10. Store in vector database
 
-### Layer 2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Answer a User Question
+### Layer 2 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Answer a User Question
 
 1. User asks
 2. Input guardrail
@@ -53,7 +53,7 @@
 16. Apply fallback if weak
 17. Write audit log
 
-### Layer 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Quality Control
+### Layer 3 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Quality Control
 
 1. Create evaluation questions
 2. Test retrieval
@@ -68,15 +68,15 @@
 
 MetricGuard will use a multi-agent workflow with three planned agents.
 
-### Agent 1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Evidence Retrieval Agent
+### Agent 1 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Evidence Retrieval Agent
 
 Retrieves relevant evidence from the knowledge base.
 
-### Agent 2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Metric Investigation Agent
+### Agent 2 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Metric Investigation Agent
 
 Investigates metric definitions, conflicts, versions, freshness, lineage, and downstream impact.
 
-### Agent 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Verification and Reporting Agent
+### Agent 3 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Verification and Reporting Agent
 
 Verifies whether retrieved evidence supports the conclusion and generates the structured final response.
 
@@ -119,17 +119,17 @@ Can:
 
 ```text
 Google Colab
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Experiment and validate
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Reusable logic identified
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 src/metricguard/
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Production-style Python modules
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Automated tests
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 Streamlit application
 ```
 
@@ -139,18 +139,18 @@ Streamlit application
 
 ```text
 metricguard-ai/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ notebooks/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ data/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ raw/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ processed/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ ground_truth/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ samples/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ src/metricguard/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ app/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ tests/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ configs/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ docs/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ outputs/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ notebooks/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ data/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ raw/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ processed/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ ground_truth/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ samples/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ src/metricguard/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ app/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ tests/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ configs/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ docs/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ outputs/
 ```
 
 ---
@@ -232,31 +232,31 @@ Planned metrics:
 
 ---
 
-## Flagship Metric Conflict ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Net Revenue
+## Flagship Metric Conflict ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Net Revenue
 
 ### Version 1
 
 Gross Revenue
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Refunds
 
 ### Version 2
 
 Gross Revenue
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Discounts
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Discounts
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Refunds
 
-### Version 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Current
+### Version 3 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Current
 
 Gross Revenue
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Discounts
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
-ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Chargebacks
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Discounts
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Refunds
+ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Chargebacks
 
 Planned inconsistency:
 
-* Finance Dashboard ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V3
-* Executive Dashboard ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V2
-* Legacy Monthly Report ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V1
+* Finance Dashboard ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ V3
+* Executive Dashboard ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ V2
+* Legacy Monthly Report ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ V1
 
 ---
 
@@ -290,7 +290,7 @@ Completed checkouts divided by checkout starts.
 
 # SQL Warehouse
 
-## Staging Layer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COMPLETE
+## Staging Layer ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â COMPLETE
 
 Created:
 
@@ -320,27 +320,27 @@ Major metric business logic is intentionally not applied at the staging layer.
 
 ```text
 raw_customers
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_customers
 
 raw_orders
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_orders
 
 raw_order_items
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_order_items
 
 raw_payments
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_payments
 
 raw_refunds
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_refunds
 
 raw_web_sessions
-    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
+    ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ
 stg_web_sessions
 ```
 
@@ -348,7 +348,7 @@ stg_web_sessions
 
 # Completed Work
 
-## Phase 0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project Foundation
+## Phase 0 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Project Foundation
 
 * GitHub repository created
 * Local repository cloned
@@ -360,14 +360,14 @@ stg_web_sessions
 * project `.venv` created
 * VS Code Python interpreter configured
 * Notebook 00 created
-* Colab ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Â GitHub workflow established
+* Colab ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â GitHub workflow established
 * `settings.yaml` created
 * README foundation created
 * system architecture documentation created
 * project version initialized at `0.1.0`
 * authentication/RBAC requirement defined
 
-## Phase 1.1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Business Universe
+## Phase 1.1 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Business Universe
 
 * Northstar Commerce defined
 * business teams defined
@@ -375,23 +375,23 @@ stg_web_sessions
 * version conflicts designed
 * planned incidents and analyst notes defined
 
-## Phase 1.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Synthetic Raw Data
+## Phase 1.2 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Synthetic Raw Data
 
 * six operational datasets generated
 * relationship validation performed
 * CSV files exported
 * raw datasets committed to GitHub
 
-## Phase 1.3A ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SQL Staging
+## Phase 1.3A ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â SQL Staging
 
 * six staging SQL models created
-* raw ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ staging lineage established
+* raw ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ staging lineage established
 
 ---
 
 # Next Work
 
-## Phase 1.3B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Facts and Business Marts
+## Phase 1.3B ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Facts and Business Marts
 
 Next planned work:
 
@@ -429,7 +429,7 @@ Whenever a major project phase is completed:
 
 ---
 
-## Phase 1.3B Ã¢â‚¬â€ Facts and Business Marts
+## Phase 1.3B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Facts and Business Marts
 
 ### Fact Models Created
 
@@ -463,7 +463,7 @@ The Executive mart therefore intentionally omits chargebacks and represents stal
 
 ---
 
-## Phase 1.4 Ã¢â‚¬â€ Metric Definitions and Version History
+## Phase 1.4 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Metric Definitions and Version History
 
 ### Versioned Metrics Created
 
@@ -505,7 +505,7 @@ Business-rule Markdown documents and SQL metric definitions now provide independ
 
 ---
 
-## Phase 1.5 Ã¢â‚¬â€ Dashboard Metadata and dbt-Style Documentation
+## Phase 1.5 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Dashboard Metadata and dbt-Style Documentation
 
 ### Dashboard Metadata Created
 
@@ -554,14 +554,14 @@ MetricGuard will therefore have multiple independent evidence sources for versio
 
 ---
 
-## Phase 1.6 Ã¢â‚¬â€ Incident Tickets and Analyst Notes
+## Phase 1.6 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Incident Tickets and Analyst Notes
 
 ### Incident Tickets Created
 
-- INC-001 Ã¢â‚¬â€ Executive vs Finance Net Revenue mismatch
-- INC-002 Ã¢â‚¬â€ Active Customer definition mismatch
-- INC-003 Ã¢â‚¬â€ Operations vs Finance Total Orders discrepancy
-- INC-004 Ã¢â‚¬â€ Conversion Rate migration change
+- INC-001 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Executive vs Finance Net Revenue mismatch
+- INC-002 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Active Customer definition mismatch
+- INC-003 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Operations vs Finance Total Orders discrepancy
+- INC-004 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Conversion Rate migration change
 
 ### Incident Types
 
@@ -600,7 +600,7 @@ This enables later retrieval and reasoning across heterogeneous evidence types.
 
 ---
 
-## Phase 1.7 Ã¢â‚¬â€ Ground Truth and Evaluation Dataset
+## Phase 1.7 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Ground Truth and Evaluation Dataset
 
 ### Ground-Truth Files Created
 
@@ -654,7 +654,7 @@ Phase 1 synthetic knowledge-base construction is now complete.
 
 ---
 
-## Phase 2.1 Ã¢â‚¬â€ Document Loading and Parsing
+## Phase 2.1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Document Loading and Parsing
 
 ### Completed
 
@@ -705,7 +705,7 @@ These files are reproducible pipeline outputs and remain excluded from Git.
 
 ---
 
-## Phase 2.2 Ã¢â‚¬â€ Production Ingestion Parser
+## Phase 2.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Production Ingestion Parser
 
 ### Completed
 
@@ -766,16 +766,16 @@ Reranking is now a mandatory component of MetricGuard retrieval.
 The configured retrieval flow will be:
 
 initial retrieval
-Ã¢â€ â€™ metadata filtering
-Ã¢â€ â€™ reranking
-Ã¢â€ â€™ version/freshness/lineage reasoning
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ metadata filtering
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ reranking
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ version/freshness/lineage reasoning
 
 `rerank_enabled` is now set to true in the project configuration.
 
 
 ---
 
-## Phase 3.2 Ã¢â‚¬â€ Production Chunking and Metadata
+## Phase 3.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Production Chunking and Metadata
 
 ### Completed
 
@@ -845,13 +845,13 @@ Reranking remains mandatory.
 Future retrieval flow:
 
 initial vector retrieval
-Ã¢â€ â€™ metadata filtering
-Ã¢â€ â€™ mandatory reranking
-Ã¢â€ â€™ version/freshness/lineage reasoning
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ metadata filtering
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ mandatory reranking
+ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ version/freshness/lineage reasoning
 
 ---
 
-## Phase 4.2 â€” Governance-Enriched Retrieval Chunks
+## Phase 4.2 Ã¢â‚¬â€ Governance-Enriched Retrieval Chunks
 
 ### Completed
 
@@ -867,12 +867,12 @@ Created:
 ### Enrichment Flow
 
 raw sources
-â†’ production parser
-â†’ source-aware chunker
-â†’ metadata
-â†’ version authority
-â†’ freshness analysis
-â†’ governance-enriched retrieval chunks
+Ã¢â€ â€™ production parser
+Ã¢â€ â€™ source-aware chunker
+Ã¢â€ â€™ metadata
+Ã¢â€ â€™ version authority
+Ã¢â€ â€™ freshness analysis
+Ã¢â€ â€™ governance-enriched retrieval chunks
 
 ### Governance Metadata
 
@@ -912,7 +912,7 @@ Implement SQL lineage extraction and downstream impact mapping.
 
 ---
 
-## Phase 5.1 — Production SQL Lineage and Impact
+## Phase 5.1 â€” Production SQL Lineage and Impact
 
 ### Completed
 
@@ -937,14 +937,14 @@ Internal CTE aliases are excluded from external lineage.
 SQL models are represented as directed dependencies:
 
 upstream relation
-→ downstream model
+â†’ downstream model
 
 ### Dashboard Lineage
 
 Dashboard JSON metadata contributes downstream consumption edges:
 
 source mart
-→ dashboard
+â†’ dashboard
 
 ### Graph Intelligence
 
@@ -977,3 +977,69 @@ The future investigation agents will call this engine as a tool.
 
 Attach lineage and downstream impact metadata to retrieval chunks and create
 `04_lineage_impact.ipynb` for graph inspection and portfolio visualization.
+
+---
+
+## Phase 5.2 — Lineage-Enriched Retrieval Layer
+
+### Completed
+
+Lineage and downstream impact intelligence are now attached directly to
+retrieval-ready KnowledgeChunk objects.
+
+Created:
+
+- `src/metricguard/lineage/enrichment.py`
+- `src/metricguard/lineage/enrichment_pipeline.py`
+- `tests/test_lineage_enrichment.py`
+- `notebooks/04_lineage_impact.ipynb`
+
+### Final Pre-Embedding Pipeline
+
+raw sources
+→ ingestion
+→ source-aware chunking
+→ base metadata
+→ version authority
+→ freshness intelligence
+→ lineage graph
+→ downstream impact
+→ fully enriched retrieval chunks
+
+### Lineage Metadata
+
+Applicable chunks now carry:
+
+- lineage node
+- lineage availability
+- direct upstream assets
+- all upstream assets
+- direct downstream assets
+- all downstream assets
+- upstream count
+- downstream impact count
+
+### Generated Retrieval Artifact
+
+`data/processed/fully_enriched_chunks.jsonl`
+
+This is now the canonical input to the embedding and vector-database stage.
+
+### Notebook 04
+
+Notebook 04 imports the production lineage engine rather than reimplementing
+lineage logic.
+
+It provides:
+
+- graph inspection
+- upstream lineage examples
+- downstream impact examples
+- focused revenue-lineage visualization
+- evaluation against hidden expected lineage
+
+### Next
+
+Generate embeddings for the fully enriched chunks and store them in Qdrant.
+
+Mandatory reranking remains part of the later retrieval pipeline.
