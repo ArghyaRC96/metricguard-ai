@@ -1,5 +1,8 @@
 from typing import Any
 
+from .decision import (
+    normalize_verification_report,
+)
 from .state import (
     MetricGuardAgentState,
 )
@@ -7,7 +10,7 @@ from .state import (
 
 class VerificationReportingAgent:
     """
-    Agent 3 — independently verify Agent 2
+    Agent 3 - independently verify Agent 2
     and produce the final report.
     """
 
@@ -46,16 +49,20 @@ class VerificationReportingAgent:
             result,
             "model_dump",
         ):
-
             final_report = (
                 result.model_dump()
             )
 
         else:
-
             final_report = dict(
                 result
             )
+
+        final_report = (
+            normalize_verification_report(
+                final_report
+            )
+        )
 
         decision = str(
             final_report.get(

@@ -1,3 +1,6 @@
+from .decision import (
+    normalize_verification_report,
+)
 from .config import (
     AgentConfig,
     load_agent_config,
@@ -32,6 +35,7 @@ from .verifier import (
 )
 
 __all__ = [
+    "normalize_verification_report",
     "AgentConfig",
     "MetricGuardAgentState",
     "InvestigationResult",
