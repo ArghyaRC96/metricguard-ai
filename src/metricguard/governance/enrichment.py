@@ -18,8 +18,10 @@ def extract_metric_context(
     If unavailable, inspect structure-aware JSON/YAML chunks.
     """
 
-    metric_name = chunk.metadata.get(
-        "metric_name"
+    metric_name = (
+        chunk.metadata.get("metric_name")
+        or chunk.metadata.get("related_metric")
+        or chunk.metadata.get("affected_metric")
     )
 
     observed_version = chunk.metadata.get(
