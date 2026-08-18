@@ -1,10 +1,10 @@
-# MetricGuard AI Ã¢â‚¬â€ Project State
+# MetricGuard AI ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project State
 
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 4.2 — Governance-Enriched Retrieval Chunks Complete
-**Next Phase:** Phase 5 — SQL Lineage and Impact Intelligence
+**Current Phase:** Phase 5.1 — Production SQL Lineage and Impact Engine Complete
+**Next Phase:** Phase 5.2 — Lineage-Enriched Retrieval Chunks and Notebook 04
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## Core RAG Roadmap
 
-### Layer 1 Ã¢â‚¬â€ Build the Knowledge Base
+### Layer 1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Build the Knowledge Base
 
 1. Collect source documents
 2. Load and parse text
@@ -33,7 +33,7 @@
 9. Create embeddings
 10. Store in vector database
 
-### Layer 2 Ã¢â‚¬â€ Answer a User Question
+### Layer 2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Answer a User Question
 
 1. User asks
 2. Input guardrail
@@ -53,7 +53,7 @@
 16. Apply fallback if weak
 17. Write audit log
 
-### Layer 3 Ã¢â‚¬â€ Quality Control
+### Layer 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Quality Control
 
 1. Create evaluation questions
 2. Test retrieval
@@ -68,15 +68,15 @@
 
 MetricGuard will use a multi-agent workflow with three planned agents.
 
-### Agent 1 Ã¢â‚¬â€ Evidence Retrieval Agent
+### Agent 1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Evidence Retrieval Agent
 
 Retrieves relevant evidence from the knowledge base.
 
-### Agent 2 Ã¢â‚¬â€ Metric Investigation Agent
+### Agent 2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Metric Investigation Agent
 
 Investigates metric definitions, conflicts, versions, freshness, lineage, and downstream impact.
 
-### Agent 3 Ã¢â‚¬â€ Verification and Reporting Agent
+### Agent 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Verification and Reporting Agent
 
 Verifies whether retrieved evidence supports the conclusion and generates the structured final response.
 
@@ -119,17 +119,17 @@ Can:
 
 ```text
 Google Colab
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 Experiment and validate
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 Reusable logic identified
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 src/metricguard/
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 Production-style Python modules
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 Automated tests
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 Streamlit application
 ```
 
@@ -139,18 +139,18 @@ Streamlit application
 
 ```text
 metricguard-ai/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ notebooks/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ data/
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ raw/
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ processed/
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ ground_truth/
-Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ samples/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ src/metricguard/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ app/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ tests/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ configs/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ docs/
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ outputs/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ notebooks/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ data/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ raw/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ processed/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ ground_truth/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ samples/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ src/metricguard/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ app/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ tests/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ configs/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ docs/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ outputs/
 ```
 
 ---
@@ -232,31 +232,31 @@ Planned metrics:
 
 ---
 
-## Flagship Metric Conflict Ã¢â‚¬â€ Net Revenue
+## Flagship Metric Conflict ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Net Revenue
 
 ### Version 1
 
 Gross Revenue
-Ã¢Ë†â€™ Refunds
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
 
 ### Version 2
 
 Gross Revenue
-Ã¢Ë†â€™ Discounts
-Ã¢Ë†â€™ Refunds
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Discounts
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
 
-### Version 3 Ã¢â‚¬â€ Current
+### Version 3 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Current
 
 Gross Revenue
-Ã¢Ë†â€™ Discounts
-Ã¢Ë†â€™ Refunds
-Ã¢Ë†â€™ Chargebacks
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Discounts
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Refunds
+ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢ Chargebacks
 
 Planned inconsistency:
 
-* Finance Dashboard Ã¢â€ â€™ V3
-* Executive Dashboard Ã¢â€ â€™ V2
-* Legacy Monthly Report Ã¢â€ â€™ V1
+* Finance Dashboard ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V3
+* Executive Dashboard ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V2
+* Legacy Monthly Report ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ V1
 
 ---
 
@@ -290,7 +290,7 @@ Completed checkouts divided by checkout starts.
 
 # SQL Warehouse
 
-## Staging Layer Ã¢â‚¬â€ COMPLETE
+## Staging Layer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COMPLETE
 
 Created:
 
@@ -320,27 +320,27 @@ Major metric business logic is intentionally not applied at the staging layer.
 
 ```text
 raw_customers
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_customers
 
 raw_orders
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_orders
 
 raw_order_items
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_order_items
 
 raw_payments
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_payments
 
 raw_refunds
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_refunds
 
 raw_web_sessions
-    Ã¢â€ â€œ
+    ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Å“
 stg_web_sessions
 ```
 
@@ -348,7 +348,7 @@ stg_web_sessions
 
 # Completed Work
 
-## Phase 0 Ã¢â‚¬â€ Project Foundation
+## Phase 0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Project Foundation
 
 * GitHub repository created
 * Local repository cloned
@@ -360,14 +360,14 @@ stg_web_sessions
 * project `.venv` created
 * VS Code Python interpreter configured
 * Notebook 00 created
-* Colab Ã¢â€ â€ GitHub workflow established
+* Colab ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬Â GitHub workflow established
 * `settings.yaml` created
 * README foundation created
 * system architecture documentation created
 * project version initialized at `0.1.0`
 * authentication/RBAC requirement defined
 
-## Phase 1.1 Ã¢â‚¬â€ Business Universe
+## Phase 1.1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Business Universe
 
 * Northstar Commerce defined
 * business teams defined
@@ -375,23 +375,23 @@ stg_web_sessions
 * version conflicts designed
 * planned incidents and analyst notes defined
 
-## Phase 1.2 Ã¢â‚¬â€ Synthetic Raw Data
+## Phase 1.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Synthetic Raw Data
 
 * six operational datasets generated
 * relationship validation performed
 * CSV files exported
 * raw datasets committed to GitHub
 
-## Phase 1.3A Ã¢â‚¬â€ SQL Staging
+## Phase 1.3A ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SQL Staging
 
 * six staging SQL models created
-* raw Ã¢â€ â€™ staging lineage established
+* raw ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ staging lineage established
 
 ---
 
 # Next Work
 
-## Phase 1.3B Ã¢â‚¬â€ Facts and Business Marts
+## Phase 1.3B ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Facts and Business Marts
 
 Next planned work:
 
@@ -429,7 +429,7 @@ Whenever a major project phase is completed:
 
 ---
 
-## Phase 1.3B â€” Facts and Business Marts
+## Phase 1.3B Ã¢â‚¬â€ Facts and Business Marts
 
 ### Fact Models Created
 
@@ -463,7 +463,7 @@ The Executive mart therefore intentionally omits chargebacks and represents stal
 
 ---
 
-## Phase 1.4 â€” Metric Definitions and Version History
+## Phase 1.4 Ã¢â‚¬â€ Metric Definitions and Version History
 
 ### Versioned Metrics Created
 
@@ -505,7 +505,7 @@ Business-rule Markdown documents and SQL metric definitions now provide independ
 
 ---
 
-## Phase 1.5 â€” Dashboard Metadata and dbt-Style Documentation
+## Phase 1.5 Ã¢â‚¬â€ Dashboard Metadata and dbt-Style Documentation
 
 ### Dashboard Metadata Created
 
@@ -554,14 +554,14 @@ MetricGuard will therefore have multiple independent evidence sources for versio
 
 ---
 
-## Phase 1.6 â€” Incident Tickets and Analyst Notes
+## Phase 1.6 Ã¢â‚¬â€ Incident Tickets and Analyst Notes
 
 ### Incident Tickets Created
 
-- INC-001 â€” Executive vs Finance Net Revenue mismatch
-- INC-002 â€” Active Customer definition mismatch
-- INC-003 â€” Operations vs Finance Total Orders discrepancy
-- INC-004 â€” Conversion Rate migration change
+- INC-001 Ã¢â‚¬â€ Executive vs Finance Net Revenue mismatch
+- INC-002 Ã¢â‚¬â€ Active Customer definition mismatch
+- INC-003 Ã¢â‚¬â€ Operations vs Finance Total Orders discrepancy
+- INC-004 Ã¢â‚¬â€ Conversion Rate migration change
 
 ### Incident Types
 
@@ -600,7 +600,7 @@ This enables later retrieval and reasoning across heterogeneous evidence types.
 
 ---
 
-## Phase 1.7 â€” Ground Truth and Evaluation Dataset
+## Phase 1.7 Ã¢â‚¬â€ Ground Truth and Evaluation Dataset
 
 ### Ground-Truth Files Created
 
@@ -654,7 +654,7 @@ Phase 1 synthetic knowledge-base construction is now complete.
 
 ---
 
-## Phase 2.1 â€” Document Loading and Parsing
+## Phase 2.1 Ã¢â‚¬â€ Document Loading and Parsing
 
 ### Completed
 
@@ -705,7 +705,7 @@ These files are reproducible pipeline outputs and remain excluded from Git.
 
 ---
 
-## Phase 2.2 â€” Production Ingestion Parser
+## Phase 2.2 Ã¢â‚¬â€ Production Ingestion Parser
 
 ### Completed
 
@@ -766,16 +766,16 @@ Reranking is now a mandatory component of MetricGuard retrieval.
 The configured retrieval flow will be:
 
 initial retrieval
-â†’ metadata filtering
-â†’ reranking
-â†’ version/freshness/lineage reasoning
+Ã¢â€ â€™ metadata filtering
+Ã¢â€ â€™ reranking
+Ã¢â€ â€™ version/freshness/lineage reasoning
 
 `rerank_enabled` is now set to true in the project configuration.
 
 
 ---
 
-## Phase 3.2 â€” Production Chunking and Metadata
+## Phase 3.2 Ã¢â‚¬â€ Production Chunking and Metadata
 
 ### Completed
 
@@ -845,13 +845,13 @@ Reranking remains mandatory.
 Future retrieval flow:
 
 initial vector retrieval
-â†’ metadata filtering
-â†’ mandatory reranking
-â†’ version/freshness/lineage reasoning
+Ã¢â€ â€™ metadata filtering
+Ã¢â€ â€™ mandatory reranking
+Ã¢â€ â€™ version/freshness/lineage reasoning
 
 ---
 
-## Phase 4.2 — Governance-Enriched Retrieval Chunks
+## Phase 4.2 â€” Governance-Enriched Retrieval Chunks
 
 ### Completed
 
@@ -867,12 +867,12 @@ Created:
 ### Enrichment Flow
 
 raw sources
-→ production parser
-→ source-aware chunker
-→ metadata
-→ version authority
-→ freshness analysis
-→ governance-enriched retrieval chunks
+â†’ production parser
+â†’ source-aware chunker
+â†’ metadata
+â†’ version authority
+â†’ freshness analysis
+â†’ governance-enriched retrieval chunks
 
 ### Governance Metadata
 
@@ -909,3 +909,71 @@ These are reproducible local pipeline outputs and remain excluded from Git.
 ### Next
 
 Implement SQL lineage extraction and downstream impact mapping.
+
+---
+
+## Phase 5.1 — Production SQL Lineage and Impact
+
+### Completed
+
+Implemented deterministic SQL lineage extraction and downstream impact analysis.
+
+### Production Components
+
+Created:
+
+- `src/metricguard/lineage/models.py`
+- `src/metricguard/lineage/extractor.py`
+- `src/metricguard/lineage/graph.py`
+- `src/metricguard/lineage/pipeline.py`
+- `tests/test_lineage.py`
+
+### SQL Lineage
+
+SQLGlot parses MetricGuard SQL assets and extracts actual upstream relations.
+
+Internal CTE aliases are excluded from external lineage.
+
+SQL models are represented as directed dependencies:
+
+upstream relation
+→ downstream model
+
+### Dashboard Lineage
+
+Dashboard JSON metadata contributes downstream consumption edges:
+
+source mart
+→ dashboard
+
+### Graph Intelligence
+
+NetworkX represents the lineage system as a directed graph.
+
+MetricGuard can now compute:
+
+- direct upstream dependencies
+- transitive upstream dependencies
+- direct downstream consumers
+- transitive downstream impact
+- graph cycle validation
+
+### Generated Outputs
+
+- `data/processed/lineage_edges.csv`
+- `data/processed/lineage_graph.json`
+- `data/processed/impact_report.csv`
+
+These remain generated local artifacts and are excluded from Git.
+
+### Design Principle
+
+Lineage and impact are computed deterministically from source SQL and dashboard
+metadata rather than inferred by the LLM.
+
+The future investigation agents will call this engine as a tool.
+
+### Next
+
+Attach lineage and downstream impact metadata to retrieval chunks and create
+`04_lineage_impact.ipynb` for graph inspection and portfolio visualization.
