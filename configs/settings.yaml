@@ -1,4 +1,4 @@
-﻿project:
+project:
   name: metricguard-ai
   version: "0.1.0"
   environment: development
@@ -30,3 +30,6 @@ security:
 logging:
   level: INFO
   audit_logging_enabled: true
+freshness:
+  warning_after_days: 120
+  stale_after_days: 180

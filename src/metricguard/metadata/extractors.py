@@ -20,8 +20,11 @@ MARKDOWN_METADATA_FIELDS = {
     "date",
     "related_metric",
     "affected_metric",
+    "effective_from",
+    "effective_to",
+    "effective_date",
+    "last_reviewed",
 }
-
 
 def extract_dashboard_metadata(
     document: ParsedDocument,
