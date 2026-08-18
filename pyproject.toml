@@ -11,7 +11,9 @@ requires-python = ">=3.11"
 dependencies = [
     "pandas",
     "PyYAML",
-    "langchain-text-splitters>=1.1.2,<2.0.0"
+    "langchain-text-splitters>=1.1.2,<2.0.0",
+    "sqlglot",
+    "networkx"
 ]
 
 [project.optional-dependencies]
