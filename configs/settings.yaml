@@ -1,39 +1,36 @@
 project:
   name: metricguard-ai
-  version: "0.1.0"
+  version: 0.1.0
   environment: development
-
 retrieval:
   candidate_top_k: 20
   final_top_k: 5
   rerank_enabled: true
   reranker_model: cross-encoder/ms-marco-MiniLM-L6-v2
-
 chunking:
   strategy: recursive
   chunk_size: 800
   chunk_overlap: 120
-
 embeddings:
   model: sentence-transformers/all-mpnet-base-v2
   normalize: true
-
 vector_database:
   provider: qdrant
   collection_name: metricguard_dense_v1
-
 confidence:
-  minimum_threshold: 0.60
-
+  minimum_threshold: 0.6
 security:
   authentication_enabled: true
   role_based_access_control: true
   default_role: viewer
-
 logging:
   level: INFO
   audit_logging_enabled: true
-
 freshness:
   warning_after_days: 120
   stale_after_days: 180
+llm:
+  provider: gemini
+  model: gemini-3.7-flash
+  thinking_level: medium
+  structured_output: true
