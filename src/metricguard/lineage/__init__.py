@@ -1,4 +1,9 @@
-from .pipeline import run_lineage_analysis
+from .enrichment import (
+    enrich_chunk_with_lineage,
+    enrich_chunks_with_lineage,
+    infer_lineage_node,
+    validate_lineage_enrichment,
+)
 from .extractor import (
     build_dashboard_lineage_edges,
     build_lineage_edges,
@@ -15,9 +20,9 @@ from .graph import (
     validate_lineage_graph,
 )
 from .models import LineageEdge
+from .pipeline import run_lineage_analysis
 
 __all__ = [
-    "run_lineage_analysis",
     "LineageEdge",
     "extract_sql_dependencies",
     "build_sql_lineage_edges",
@@ -30,4 +35,9 @@ __all__ = [
     "get_direct_downstream",
     "get_all_downstream",
     "trace_asset",
+    "run_lineage_analysis",
+    "infer_lineage_node",
+    "enrich_chunk_with_lineage",
+    "enrich_chunks_with_lineage",
+    "validate_lineage_enrichment",
 ]
