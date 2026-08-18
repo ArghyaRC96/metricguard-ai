@@ -15,11 +15,12 @@ chunking:
   chunk_overlap: 120
 
 embeddings:
-  model: null
+  model: sentence-transformers/all-mpnet-base-v2
+  normalize: true
 
 vector_database:
   provider: qdrant
-  collection_name: metricguard
+  collection_name: metricguard_dense_v1
 
 confidence:
   minimum_threshold: 0.60
