@@ -34,3 +34,5 @@ llm:
   model: gemini-3.7-flash
   thinking_level: medium
   structured_output: true
+agentic:
+  max_revisions: 1

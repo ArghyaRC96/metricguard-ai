@@ -16,6 +16,7 @@ dependencies = [
     "networkx",
     "pydantic>=2,<3",
     "google-genai",
+    "langgraph",
 ]
 
 [project.optional-dependencies]

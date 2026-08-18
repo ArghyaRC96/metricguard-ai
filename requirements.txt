@@ -9,3 +9,4 @@ networkx==3.6.1
 
 pydantic>=2,<3
 google-genai
+langgraph
