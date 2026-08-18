@@ -965,3 +965,96 @@ Gemini calls when identical test questions are rerun.
 Phase 8.4 will add production agent safeguards, explicit relevance gating,
 final source-resolved result assembly, confidence/fallback integration and
 production caching before formal evaluation.
+
+
+---
+
+## 2026-08-19 - Phase 8.4 - Production Agentic Safeguards
+
+### Completed
+
+Finished production hardening of MetricGuard's Agentic RAG workflow.
+
+### Decision Normalization
+
+Added deterministic normalization for the case where verification approves
+an investigation whose diagnosis is insufficient_evidence.
+
+Application-level final state now correctly becomes insufficient_evidence.
+
+### Retrieval Relevance Calibration
+
+Calibrated the mandatory Cross-Encoder against supported and unsupported
+MetricGuard questions.
+
+Top-1:
+
+minimum supported = 0.5278
+maximum unsupported = 0.0120
+production threshold = 0.27
+
+Top-3 mean also showed clean separation.
+
+### Relevance Gate
+
+Added a deterministic gate before LLM investigation.
+
+Unsupported questions below the calibrated threshold now:
+
+- skip Metric Investigation Agent
+- skip Verification and Reporting Agent
+- return deterministic insufficient evidence
+- avoid Gemini token usage
+
+### Final Application Service
+
+Added a reusable application-facing Agentic RAG service.
+
+Final outputs include:
+
+- status
+- decision
+- diagnosis
+- answer
+- findings
+- deterministic sources
+- confidence
+- fallback reason
+- revision count
+- retrieval relevance metadata
+- graph trace
+- cache indicator
+
+### Confidence Guard
+
+Configured minimum final confidence:
+
+0.60
+
+Approved results below this threshold fall back to insufficient evidence.
+
+### Production Runtime Cache
+
+Added bounded LRU caching.
+
+Configured maximum:
+
+128 entries
+
+Identical normalized questions reuse the previously validated final result.
+
+### Validation
+
+Validated:
+
+- supported Net Revenue investigation
+- deterministic source resolution
+- production cache hit
+- unsupported-query relevance rejection
+- no Agent 2 or Agent 3 execution for rejected evidence
+- insufficient-evidence final result
+- full local pytest suite
+
+### Next
+
+Phase 9 - Formal Evaluation.

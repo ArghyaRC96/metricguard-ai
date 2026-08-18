@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 8.3 - Real Agentic RAG Integration Complete
-**Next Phase:** Phase 8.4 - Agentic Safeguards, Relevance Gate and Final Result Assembly
+**Current Phase:** Phase 8.4 - Production Agentic Safeguards Complete
+**Next Phase:** Phase 9 - Formal Evaluation
 
 ---
 
@@ -2187,3 +2187,147 @@ Phase 8.4 will productionize final agent safeguards:
 - production error handling
 
 After Phase 8.4, MetricGuard moves into formal evaluation.
+
+
+---
+
+## Phase 8.4 - Production Agentic Safeguards
+
+### Status
+
+COMPLETE AND VALIDATED.
+
+### Phase 8.4A - Decision Normalization and Relevance Calibration
+
+Notebook 07 exposed an important unsupported-query behavior.
+
+The investigation agent correctly diagnosed insufficient evidence, but the
+verification agent could return:
+
+decision = approved
+diagnosis = insufficient_evidence
+
+This was semantically valid as verification agreement but incorrect as an
+application-level final state.
+
+A deterministic decision normalization layer now guarantees that any
+insufficient-evidence diagnosis produces an insufficient-evidence final
+decision.
+
+Retrieval relevance was then calibrated using supported and unsupported
+MetricGuard questions.
+
+Observed Cross-Encoder Top-1 calibration:
+
+minimum supported = 0.5278
+maximum unsupported = 0.0120
+separation gap = 0.5158
+
+Observed Top-3 mean calibration:
+
+minimum supported = 0.2472
+maximum unsupported = 0.0071
+separation gap = 0.2401
+
+Initial production Top-1 relevance threshold:
+
+0.27
+
+### Phase 8.4B - Production Relevance Gate
+
+Added a deterministic relevance gate after mandatory Cross-Encoder
+reranking and before the LLM investigation agent.
+
+Current flow:
+
+question
+-> dense retrieval
+-> mandatory Cross-Encoder reranking
+-> relevance gate
+
+If the best reranked candidate is below 0.27:
+
+-> evidence rejected
+-> no-evidence fallback
+-> insufficient_evidence
+-> no Agent 2 call
+-> no Agent 3 call
+
+Unsupported-query validation confirmed that irrelevant questions now exit
+before Gemini reasoning.
+
+The graph records:
+
+- retrieval_relevant
+- retrieval_top1_score
+- retrieval_relevance_reason
+
+### Phase 8.4C - Final Application Result
+
+Added the final production application layer.
+
+Application interface:
+
+metricguard.ask(question)
+
+The application no longer needs to invoke LangGraph directly.
+
+Final production safeguards include:
+
+- deterministic evidence-source resolution
+- ground-truth runtime isolation
+- normalized final decisions
+- minimum-confidence fallback
+- relevance fallback
+- structured AgenticRAGResult
+- bounded in-memory LRU result cache
+- normalized question keys
+- reusable application-facing service
+
+Configured minimum confidence:
+
+0.60
+
+Configured cache size:
+
+128 entries
+
+### Final Runtime
+
+question
+-> runtime cache
+-> query embedding
+-> Qdrant dense retrieval
+-> mandatory Cross-Encoder reranking
+-> relevance gate
+-> Evidence Retrieval Agent
+-> Metric Investigation Agent
+-> Verification and Reporting Agent
+-> optional bounded revision
+-> deterministic decision normalization
+-> confidence safeguard
+-> deterministic source resolution
+-> AgenticRAGResult
+-> runtime cache
+
+### Unsupported Query Behavior
+
+Out-of-domain questions whose retrieved evidence does not meet the
+calibrated threshold now terminate before Gemini Agent 2 or Agent 3.
+
+This prevents unnecessary token cost and reduces unsupported reasoning.
+
+### Notebook
+
+Real production integration and safeguard validation:
+
+`notebooks/07_agentic_rag.ipynb`
+
+### Next Phase
+
+Phase 9 - Formal Evaluation.
+
+Formal evaluation will measure retrieval quality, answer correctness,
+conflict detection, intentional semantic-difference handling, stale-version
+detection, unsupported-query rejection, source correctness, confidence,
+revision behavior and failure cases.
