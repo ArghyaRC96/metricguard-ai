@@ -36,3 +36,6 @@ llm:
   structured_output: true
 agentic:
   max_revisions: 1
+relevance:
+  enabled: true
+  top1_rerank_threshold: 0.27

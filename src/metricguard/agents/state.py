@@ -29,6 +29,16 @@ class MetricGuardAgentState(
 
     retrieval_complete: bool
 
+    retrieval_relevant: bool
+
+    retrieval_top1_score: (
+        float | None
+    )
+
+    retrieval_relevance_reason: (
+        str | None
+    )
+
     investigation_complete: bool
 
     verification_complete: bool

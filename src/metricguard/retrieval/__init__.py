@@ -1,3 +1,9 @@
+from .relevance import (
+    RelevanceConfig,
+    RelevanceDecision,
+    RelevanceGate,
+    load_relevance_config,
+)
 from .config import (
     RetrievalConfig,
     load_retrieval_config,
