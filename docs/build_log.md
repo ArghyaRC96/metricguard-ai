@@ -1,10 +1,10 @@
-# MetricGuard AI â€” Build Log
+# MetricGuard AI Ã¢â‚¬â€ Build Log
 
 This document records major implementation milestones and architectural decisions made during development.
 
 ---
 
-## 2026-08-11 â€” Project Foundation
+## 2026-08-11 Ã¢â‚¬â€ Project Foundation
 
 ### Completed
 
@@ -16,7 +16,7 @@ This document records major implementation milestones and architectural decision
 * Installed Python and created project-specific `.venv`.
 * Configured VS Code interpreter.
 * Created `00_project_setup.ipynb`.
-* Established Google Colab â†” GitHub workflow.
+* Established Google Colab Ã¢â€ â€ GitHub workflow.
 * Added initial application configuration.
 * Added README and architecture documentation.
 
@@ -26,7 +26,7 @@ Experiments will be performed in notebooks, while reusable application logic wil
 
 ---
 
-## 2026-08-11 â€” Security Architecture
+## 2026-08-11 Ã¢â‚¬â€ Security Architecture
 
 ### Decision
 
@@ -38,7 +38,7 @@ Only authorized/admin users can modify the knowledge base or trigger ingestion.
 
 ---
 
-## 2026-08-11 â€” Northstar Commerce Created
+## 2026-08-11 Ã¢â‚¬â€ Northstar Commerce Created
 
 ### Decision
 
@@ -63,7 +63,7 @@ Core metrics:
 
 ---
 
-## 2026-08-11 â€” Synthetic Operational Dataset
+## 2026-08-11 Ã¢â‚¬â€ Synthetic Operational Dataset
 
 ### Completed
 
@@ -83,7 +83,7 @@ Synthetic records are deterministic using random seed `42`.
 
 ---
 
-## 2026-08-11 â€” SQL Staging Layer
+## 2026-08-11 Ã¢â‚¬â€ SQL Staging Layer
 
 ### Completed
 
@@ -95,13 +95,13 @@ Current warehouse flow:
 
 ```text
 Raw Operational Data
-        â†“
+        Ã¢â€ â€œ
 Staging Layer
-        â†“
+        Ã¢â€ â€œ
 Facts / Marts
-        â†“
+        Ã¢â€ â€œ
 Metrics
-        â†“
+        Ã¢â€ â€œ
 Dashboards
 ```
 
@@ -111,7 +111,7 @@ Build fact tables and business marts.
 
 ---
 
-## 2026-08-11 â€” Phase 1.3B â€” Facts and Business Marts
+## 2026-08-11 Ã¢â‚¬â€ Phase 1.3B Ã¢â‚¬â€ Facts and Business Marts
 
 ### Completed
 
@@ -139,7 +139,7 @@ This creates MetricGuard's first deliberate version-aware metric discrepancy.
 
 ---
 
-## 2026-08-11 â€” Phase 1.4 â€” Metric Definitions and Version History
+## 2026-08-11 Ã¢â‚¬â€ Phase 1.4 Ã¢â‚¬â€ Metric Definitions and Version History
 
 ### Completed
 
@@ -168,7 +168,7 @@ Several downstream assets intentionally continue using older or semantically dif
 
 ---
 
-## 2026-08-11 â€” Phase 1.5 â€” Dashboard Metadata and dbt-Style Documentation
+## 2026-08-11 Ã¢â‚¬â€ Phase 1.5 Ã¢â‚¬â€ Dashboard Metadata and dbt-Style Documentation
 
 ### Completed
 
@@ -199,7 +199,7 @@ This enables MetricGuard to compare downstream dashboard usage against approved 
 
 ---
 
-## 2026-08-11 â€” Phase 1.6 â€” Incident Tickets and Analyst Notes
+## 2026-08-11 Ã¢â‚¬â€ Phase 1.6 Ã¢â‚¬â€ Incident Tickets and Analyst Notes
 
 ### Completed
 
@@ -231,7 +231,7 @@ discrepancy is an expected semantic difference rather than a data failure.
 
 ---
 
-## 2026-08-11 â€” Phase 1.7 â€” Ground Truth and Evaluation Dataset
+## 2026-08-11 Ã¢â‚¬â€ Phase 1.7 Ã¢â‚¬â€ Ground Truth and Evaluation Dataset
 
 ### Completed
 
@@ -264,7 +264,7 @@ document ingestion and parsing.
 
 ---
 
-## 2026-08-11 â€” Phase 2.1 â€” Document Loading and Parsing
+## 2026-08-11 Ã¢â‚¬â€ Phase 2.1 Ã¢â‚¬â€ Document Loading and Parsing
 
 ### Completed
 
@@ -299,7 +299,7 @@ Move the validated parser implementation from the experimental notebook into
 
 ---
 
-## 2026-08-15 â€” Phase 2.2 â€” Production Ingestion Parser
+## 2026-08-15 Ã¢â‚¬â€ Phase 2.2 Ã¢â‚¬â€ Production Ingestion Parser
 
 ### Completed
 
@@ -339,7 +339,7 @@ Implement source-aware chunking and metadata enrichment.
 
 ---
 
-## 2026-08-15 — Phase 3.2 — Production Chunking and Metadata
+## 2026-08-15 â€” Phase 3.2 â€” Production Chunking and Metadata
 
 ### Completed
 
@@ -374,3 +374,33 @@ Current metadata establishes the foundation for later:
 ### Next
 
 Implement explicit metric-version authority and freshness intelligence.
+
+---
+
+## 2026-08-18 — Phase 4.2 — Governance-Enriched Retrieval Chunks
+
+### Completed
+
+Integrated version and freshness intelligence directly into retrieval chunks.
+
+The governance enrichment layer now composes the production ingestion,
+chunking, metadata, version authority, and freshness systems.
+
+### Retrieval Architecture
+
+Chunks entering the future embedding and vector database stages can carry
+governance-aware payload fields before semantic retrieval occurs.
+
+This enables future retrieval filtering and reranking to reason over both
+semantic relevance and governance state.
+
+### Design Principle
+
+Version mismatch and freshness are signals, not final defect classifications.
+
+Conflict-aware reasoning will combine these signals with lineage, impact,
+source evidence, incidents, and business semantics.
+
+### Next
+
+Build SQL lineage extraction and downstream impact mapping.
