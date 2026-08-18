@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 8.2 - Agentic Investigation and Verification Workflow Complete
-**Next Phase:** Phase 8.3 - Real Agentic RAG Integration in Notebook 07
+**Current Phase:** Phase 8.3 - Real Agentic RAG Integration Complete
+**Next Phase:** Phase 8.4 - Agentic Safeguards, Relevance Gate and Final Result Assembly
 
 ---
 
@@ -2037,3 +2037,153 @@ Initial validation cases:
 1. Net Revenue version mismatch
 2. Total Orders intentional semantic difference
 3. Active Customers stale definition
+
+
+---
+
+## Phase 8.3 - Real Agentic RAG Integration
+
+### Status
+
+COMPLETE AND VALIDATED IN NOTEBOOK 07.
+
+### Notebook
+
+Canonical integration notebook:
+
+`notebooks/07_agentic_rag.ipynb`
+
+### Purpose
+
+Connected the production three-agent LangGraph workflow to the real
+MetricGuard retrieval and Gemini stack.
+
+### Runtime
+
+question
+-> query embedding
+-> Qdrant dense top-20 retrieval
+-> mandatory Cross-Encoder reranking
+-> top-5 evidence
+-> Evidence Retrieval Agent
+-> Metric Investigation Agent
+-> Verification and Reporting Agent
+-> conditional routing
+-> approved / revise / insufficient evidence
+
+### Agent 1
+
+Evidence Retrieval Agent uses the real production retrieval pipeline.
+
+No LLM is used for retrieval.
+
+### Agent 2
+
+Metric Investigation Agent uses the production structured LLM interface
+backed by Gemini.
+
+It reasons over:
+
+- retrieved evidence
+- deterministic version observations
+- deterministic freshness observations
+- deterministic lineage observations
+- previous investigation when revising
+- verifier feedback when revising
+
+### Agent 3
+
+Verification and Reporting Agent independently checks Agent 2 against the
+original evidence and deterministic observations.
+
+Possible decisions:
+
+- approved
+- revise
+- insufficient_evidence
+
+### Revision Loop
+
+LangGraph can route Agent 3 back to Agent 2 when revision is requested.
+
+Maximum revisions remain:
+
+`1`
+
+### Integration Cases
+
+Real integration testing covers:
+
+1. Net Revenue version/staleness disagreement
+2. Total Orders intentional semantic difference
+3. Active Customers current/stale-definition disagreement
+4. Unsupported out-of-domain question
+
+The Total Orders case explicitly validates that intentional semantic
+differences are not automatically classified as pipeline defects.
+
+### Safety Validation
+
+Validated:
+
+- bounded revision count
+- valid evidence-ID usage
+- ground-truth isolation
+- structured investigation output
+- structured verification output
+- production LangGraph execution
+- deterministic evidence boundaries
+
+### Notebook Development Cache
+
+Notebook 07 contains a development-only in-memory result cache.
+
+This protects against duplicate Gemini calls when the same question cell is
+rerun during integration testing.
+
+This cache is not the final production cache implementation.
+
+### Unsupported Queries
+
+An unsupported out-of-domain question is included specifically to evaluate
+whether semantic retrieval alone can surface irrelevant evidence.
+
+Phase 8.4 will add or strengthen an explicit retrieval relevance gate before
+the final production evaluation.
+
+### Architecture Boundary
+
+Deterministic MetricGuard components remain responsible for:
+
+- parsing
+- chunking
+- metadata
+- versions
+- freshness
+- lineage
+- impact
+- embeddings
+- retrieval
+- reranking
+- evidence validation
+
+LLM agents remain responsible for:
+
+- investigation
+- interpretation
+- contradiction reasoning
+- verification
+- explanation
+
+### Next Phase
+
+Phase 8.4 will productionize final agent safeguards:
+
+- retrieval relevance gate
+- deterministic source resolution for agent reports
+- final application-facing result schema
+- confidence and fallback integration
+- agentic response caching
+- production error handling
+
+After Phase 8.4, MetricGuard moves into formal evaluation.

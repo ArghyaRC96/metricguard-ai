@@ -902,3 +902,66 @@ Create and validate:
 
 using real retrieval, mandatory reranking, Gemini reasoning, Gemini
 verification, and LangGraph conditional routing.
+
+
+---
+
+## 2026-08-19 - Phase 8.3 - Real Agentic RAG Integration
+
+### Completed
+
+Integrated the production MetricGuard three-agent system with the real
+retrieval and Gemini runtime in Notebook 07.
+
+### Real Runtime
+
+Validated:
+
+Qdrant
+-> dense retrieval
+-> mandatory Cross-Encoder reranking
+-> Evidence Retrieval Agent
+-> Gemini Metric Investigation Agent
+-> Gemini Verification and Reporting Agent
+-> LangGraph conditional routing
+
+### Agentic Validation
+
+Real integration cases include:
+
+- Net Revenue disagreement
+- Total Orders intentional semantic difference
+- Active Customers disagreement
+- unsupported out-of-domain question
+
+### Self-Correction
+
+The verification agent can request one revision.
+
+LangGraph then routes the workflow back to the investigation agent and
+returns the revised investigation for re-verification.
+
+The workflow remains bounded by:
+
+`max_revisions = 1`
+
+### Safety
+
+Validated production boundaries for:
+
+- evidence IDs
+- ground-truth isolation
+- structured outputs
+- revision limits
+- deterministic governance facts
+
+### Development Cost Protection
+
+Notebook 07 uses an in-memory development result cache to avoid duplicate
+Gemini calls when identical test questions are rerun.
+
+### Next
+
+Phase 8.4 will add production agent safeguards, explicit relevance gating,
+final source-resolved result assembly, confidence/fallback integration and
+production caching before formal evaluation.
