@@ -277,8 +277,11 @@ logs/
 # ------------------------------------------------------------
 # Generated MetricGuard outputs
 # ------------------------------------------------------------
+# Tracking formal evaluation artifacts while ignoring other generated outputs.
+
 outputs/*
-!outputs/.gitkeep
+!outputs/evaluation/
+!outputs/evaluation/**
 
 # ------------------------------------------------------------
 # Generated processed data

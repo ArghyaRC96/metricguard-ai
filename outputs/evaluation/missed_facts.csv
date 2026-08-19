@@ -1,0 +1,7 @@
+question_id,category,fact_index,required_fact,final_status,audit_note
+Q002,version_detection,3,"The definition subtracts discounts, completed refunds, and posted chargebacks from Gross Revenue.",missing,"The answer mentions chargebacks but does not provide the complete v3 formula with discounts, completed refunds, and posted chargebacks."
+Q004,semantic_conflict,1,Growth uses Active Customers v1.,missing,The answer describes the Growth dashboard's older digital-activity semantics but never explicitly identifies them as Active Customers v1.
+Q008,lineage,2,mart_finance_daily depends on fct_orders.,missing,The answer does not state that mart_finance_daily depends on fct_orders.
+Q008,lineage,3,"fct_orders depends on stg_orders, stg_payments, and stg_refunds.",missing,"The answer does not identify stg_orders, stg_payments, and stg_refunds as upstream dependencies of fct_orders."
+Q008,lineage,4,"Those staging models originate from raw_orders, raw_payments, and raw_refunds.",missing,"The answer does not continue lineage to raw_orders, raw_payments, and raw_refunds."
+Q009,impact_analysis,2,Its upstream mart is mart_executive_daily.,missing,The answer refers generally to the Executive pipeline but does not name mart_executive_daily as the upstream mart.

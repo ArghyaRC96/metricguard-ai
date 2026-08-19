@@ -1,0 +1,11 @@
+question_id,category,expected_classification,predicted_diagnosis,allowed_diagnoses,classification_correct
+Q001,conflict_detection,stale_version_conflict,metric_migration,"['metric_migration', 'stale_definition', 'version_mismatch']",True
+Q002,version_detection,,metric_migration,,
+Q003,staleness_detection,stale_version_conflict,version_mismatch,"['metric_migration', 'stale_definition', 'version_mismatch']",True
+Q004,semantic_conflict,stale_semantic_definition,intentional_semantic_difference,"['stale_definition', 'version_mismatch']",False
+Q005,semantic_classification,expected_semantic_difference,intentional_semantic_difference,['intentional_semantic_difference'],True
+Q006,version_detection,,metric_migration,,
+Q007,metric_migration,expected_metric_migration,metric_migration,['metric_migration'],True
+Q008,lineage,,metric_migration,,
+Q009,impact_analysis,,version_mismatch,,
+Q010,version_detection,,metric_migration,,

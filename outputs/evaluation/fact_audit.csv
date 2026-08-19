@@ -1,0 +1,36 @@
+question_id,category,fact_index,required_fact,nli_label,nli_entailment_probability,final_status,audit_source,audit_note
+Q001,conflict_detection,1,Finance uses Net Revenue v3.,entailment,0.9853072166442871,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q001,conflict_detection,2,Executive uses Net Revenue v2.,entailment,0.9880903959274292,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q001,conflict_detection,3,Net Revenue v3 became effective on 2026-04-01.,entailment,0.8767827749252319,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q001,conflict_detection,4,Version 3 deducts posted chargebacks while Version 2 does not.,entailment,0.9937449097633362,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q002,version_detection,1,The current Net Revenue version is v3.,entailment,0.9881750345230103,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q002,version_detection,2,It became effective on 2026-04-01.,neutral,0.00614476203918457,supported,manual_review,The answer explicitly states that v3 became effective on 2026-04-01.
+Q002,version_detection,3,"The definition subtracts discounts, completed refunds, and posted chargebacks from Gross Revenue.",neutral,0.00034210531157441437,missing,manual_review,"The answer mentions chargebacks but does not provide the complete v3 formula with discounts, completed refunds, and posted chargebacks."
+Q003,staleness_detection,1,No.,contradiction,0.009074604138731956,supported,manual_review,The answer explicitly begins with 'No'.
+Q003,staleness_detection,2,The Executive KPI Dashboard uses Net Revenue v2.,contradiction,0.11872872710227966,supported,manual_review,The answer explicitly states that the Executive KPI Dashboard remains on v2.
+Q003,staleness_detection,3,The current enterprise version is v3.,contradiction,0.001040868810378015,supported,manual_review,The answer explicitly identifies v3 as the authoritative enterprise definition.
+Q004,semantic_conflict,1,Growth uses Active Customers v1.,neutral,0.0008084927685558796,missing,manual_review,The answer describes the Growth dashboard's older digital-activity semantics but never explicitly identifies them as Active Customers v1.
+Q004,semantic_conflict,2,Version 1 counts identified customers with recent digital activity.,neutral,0.0017226218478754163,supported,manual_review,The answer explicitly describes identified customers with recent digital activity.
+Q004,semantic_conflict,3,The enterprise v2 definition requires at least one successfully paid order in the previous 30 days.,neutral,0.0019220527028664947,supported,manual_review,The answer explicitly states that enterprise v2 requires at least one successfully paid order in the previous 30 days.
+Q005,semantic_classification,1,No underlying data pipeline failure was identified.,neutral,0.12019737809896469,supported,manual_review,"The answer explicitly states that the disagreement is not a data pipeline failure, and INC-003 confirms that it is not a pipeline defect."
+Q005,semantic_classification,2,Operations counts valid placed orders excluding cancellations.,entailment,0.8680303692817688,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q005,semantic_classification,3,Finance counts successfully paid orders.,entailment,0.9815830588340759,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q005,semantic_classification,4,The discrepancy is an expected semantic difference.,entailment,0.955984354019165,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q006,version_detection,1,The current Total Orders version is v2.,neutral,0.0011168578639626503,supported,manual_review,The answer explicitly identifies the current Total Orders definition as v2.
+Q006,version_detection,2,It counts successfully paid orders.,neutral,0.47165924310684204,supported,manual_review,The answer explicitly defines Total Orders as orders with a successful payment.
+Q006,version_detection,3,It became effective on 2025-12-01.,neutral,0.000284997426206246,supported,manual_review,The key findings explicitly state that the definition became effective on 2025-12-01.
+Q007,metric_migration,1,Conversion Rate migrated to v2 on 2026-06-01.,entailment,0.9893381595611572,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q007,metric_migration,2,Version 1 used distinct purchasing customers divided by total sessions.,entailment,0.9948537945747375,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q007,metric_migration,3,Version 2 uses completed checkouts divided by checkout starts.,entailment,0.9954961538314819,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q007,metric_migration,4,The change was expected and not a data defect.,neutral,0.02888326346874237,supported,manual_review,"The answer explicitly describes the migration as intentional, planned, and expected rather than a defect."
+Q008,lineage,1,Finance Revenue Dashboard depends on mart_finance_daily.,neutral,0.4825917184352875,supported,manual_review,The answer explicitly identifies mart_finance_daily as the dashboard's direct upstream node.
+Q008,lineage,2,mart_finance_daily depends on fct_orders.,neutral,0.0014221502933651209,missing,manual_review,The answer does not state that mart_finance_daily depends on fct_orders.
+Q008,lineage,3,"fct_orders depends on stg_orders, stg_payments, and stg_refunds.",neutral,0.0031345596071332693,missing,manual_review,"The answer does not identify stg_orders, stg_payments, and stg_refunds as upstream dependencies of fct_orders."
+Q008,lineage,4,"Those staging models originate from raw_orders, raw_payments, and raw_refunds.",neutral,0.0008488019811920822,missing,manual_review,"The answer does not continue lineage to raw_orders, raw_payments, and raw_refunds."
+Q009,impact_analysis,1,The Executive KPI Dashboard is affected.,entailment,0.9964888095855713,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q009,impact_analysis,2,Its upstream mart is mart_executive_daily.,neutral,0.0012658656341955066,missing,manual_review,The answer refers generally to the Executive pipeline but does not name mart_executive_daily as the upstream mart.
+Q009,impact_analysis,3,The mart and dashboard remain associated with Net Revenue v2.,entailment,0.9926509261131287,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q010,version_detection,1,The current Refund Rate version is v2.,entailment,0.9975903034210205,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q010,version_detection,2,It is orders with completed refunds divided by paid orders.,entailment,0.996353268623352,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q010,version_detection,3,Pending refunds are excluded.,entailment,0.9971554279327393,supported,nli_entailment,NLI evaluator classified the required fact as entailed.
+Q010,version_detection,4,Version 2 became effective on 2026-02-01.,entailment,0.9940968751907349,supported,nli_entailment,NLI evaluator classified the required fact as entailed.

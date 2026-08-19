@@ -1,0 +1,7 @@
+question_id,category,status,decision,diagnosis,retrieval_relevant,top1_relevance,llm_calls,latency_seconds,trace
+U001,facilities,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,1.1601134247030132e-05,0,3.50563851699917,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"
+U002,employee_compensation,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,0.010348858311772346,0,4.367695765999997,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"
+U003,real_estate,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,0.006938559003174305,0,2.618887870000435,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"
+U004,transportation_cost,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,0.00024796847719699144,0,3.1297826220006755,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"
+U005,hr_policy,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,0.012041553854942322,0,2.5666275359999418,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"
+U006,warehouse_equipment,insufficient_evidence,insufficient_evidence,insufficient_evidence,False,1.2365467227937188e-05,0,4.5230352720000155,"['evidence_retrieval_agent', 'relevance_gate_rejected', 'no_evidence_fallback']"

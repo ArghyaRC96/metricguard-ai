@@ -1,0 +1,11 @@
+question_id,category,decision,diagnosis,confidence,top1_relevance,revisions,llm_calls,latency_seconds,source_count,error,required_facts,supported_facts,all_facts_supported,fact_coverage,expected_classification,classification_correct
+Q001,conflict_detection,approved,metric_migration,0.95,0.9938342571258545,0,2,48.47625816099992,5,,4,4,True,1.0,stale_version_conflict,True
+Q002,version_detection,approved,metric_migration,1.0,0.9874702095985413,0,2,43.830110642000136,4,,3,2,False,0.6666666666666666,,
+Q003,staleness_detection,approved,version_mismatch,0.95,0.998704195022583,0,2,50.76538196399997,5,,3,3,True,1.0,stale_version_conflict,True
+Q004,semantic_conflict,approved,intentional_semantic_difference,0.95,0.9926689863204956,0,2,85.39034369000001,5,,3,2,False,0.6666666666666666,stale_semantic_definition,False
+Q005,semantic_classification,approved,intentional_semantic_difference,1.0,0.9321001768112183,0,2,51.428416728,5,,4,4,True,1.0,expected_semantic_difference,True
+Q006,version_detection,approved,metric_migration,0.95,0.996772825717926,0,2,148.33371981900018,5,,3,3,True,1.0,,
+Q007,metric_migration,approved,metric_migration,0.98,0.9958339929580688,0,2,82.66051807300005,5,,4,4,True,1.0,expected_metric_migration,True
+Q008,lineage,approved,metric_migration,0.95,0.8079553842544556,0,2,46.883494084000176,3,,4,1,False,0.25,,
+Q009,impact_analysis,approved,version_mismatch,0.95,0.9201169013977051,0,2,53.615511380000044,5,,3,2,False,0.6666666666666666,,
+Q010,version_detection,approved,metric_migration,1.0,0.9898568391799927,0,2,39.888605145000156,5,,4,4,True,1.0,,

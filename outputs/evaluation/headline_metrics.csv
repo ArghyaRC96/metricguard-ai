@@ -1,0 +1,12 @@
+metric,value,unit
+Execution success,100.0,%
+Human-audited factual coverage,82.86,%
+Fully complete answers,60.0,%
+Classification accuracy,80.0,%
+Supported retrieval acceptance,100.0,%
+Source presence,100.0,%
+Unsupported rejection,100.0,%
+Unsupported false acceptance,0.0,%
+Unsupported zero-LLM execution,100.0,%
+Mean supported latency,65.13,seconds
+Mean unsupported latency,3.45,seconds
