@@ -3,8 +3,8 @@
 > This document is the authoritative checkpoint for the current state of the MetricGuard AI project.
 
 **Last Updated:** August 11, 2026
-**Current Phase:** Phase 8.4 - Production Agentic Safeguards Complete
-**Next Phase:** Phase 9 - Formal Evaluation
+**Current Phase:** Phase 9 - Formal Evaluation Complete
+**Next Phase:** Phase 10 - Application and Deployment
 
 ---
 
@@ -2331,3 +2331,186 @@ Formal evaluation will measure retrieval quality, answer correctness,
 conflict detection, intentional semantic-difference handling, stale-version
 detection, unsupported-query rejection, source correctness, confidence,
 revision behavior and failure cases.
+
+
+---
+
+## Phase 9 - Formal Evaluation
+
+### Status
+
+COMPLETE AND VALIDATED.
+
+### Evaluation Dataset
+
+Formal evaluation used quarantined synthetic ground truth.
+
+Supported benchmark:
+
+- 10 analytics-governance questions
+- 35 required facts
+- 5 classification-scored questions
+
+Safety benchmark:
+
+- 6 unsupported out-of-domain questions
+
+Ground-truth artifacts remained isolated from production retrieval.
+
+### Production Evaluation
+
+All 10 supported questions executed successfully.
+
+Execution success:
+
+100%
+
+Supported retrieval acceptance:
+
+100%
+
+Source presence:
+
+100%
+
+Supported benchmark LLM calls:
+
+20
+
+Mean supported-query latency:
+
+approximately 65.13 seconds
+
+Mean verification confidence:
+
+approximately 0.968
+
+Revision rate:
+
+0%
+
+### Factual Evaluation
+
+An independent NLI evaluator was initially tested for semantic fact scoring.
+
+NLI entailment coverage:
+
+48.57%
+
+Manual failure auditing demonstrated substantial evaluator false negatives,
+including explicitly supported facts being labelled neutral or contradictory.
+
+NLI is therefore retained only as an auxiliary evaluator diagnostic.
+
+Primary factual evaluation used a completed ground-truth fact audit.
+
+Final results:
+
+- required facts evaluated: 35
+- supported facts: 29
+- missing facts: 6
+- explicitly incorrect audited facts: 0
+- human-audited factual coverage: 82.86%
+- fully complete answers: 6 / 10
+- full-question factual accuracy: 60%
+
+### Classification Evaluation
+
+Classification-scored questions:
+
+5
+
+Correct classifications:
+
+4
+
+Classification accuracy:
+
+80%
+
+Primary classification failure:
+
+Active Customers semantic conflict.
+
+MetricGuard correctly explained the difference between Growth digital
+activity semantics and enterprise paid-order semantics, but classified the
+case as intentional_semantic_difference instead of recognizing the Growth
+definition as stale.
+
+### Lineage Failure
+
+The Net Revenue upstream-lineage answer identified:
+
+Finance Revenue Dashboard
+-> mart_finance_daily
+
+but did not continue through:
+
+fct_orders
+-> staging models
+-> raw source models
+
+This exposed an answer-completeness weakness in full lineage traversal.
+
+### Unsupported-Query Safety
+
+Unsupported questions evaluated:
+
+6
+
+Results:
+
+- rejection rate: 100%
+- false acceptance rate: 0%
+- zero-LLM execution rate: 100%
+- maximum unsupported Top-1 rerank score: 0.012
+- production relevance threshold: 0.27
+- mean unsupported latency: approximately 3.45 seconds
+
+All unsupported queries were rejected before Metric Investigation Agent or
+Verification and Reporting Agent execution.
+
+### Confidence Finding
+
+Mean verification confidence was approximately 96.8%, while factual
+coverage was 82.86%.
+
+Confidence calibration should therefore be treated as a future improvement
+area.
+
+### Revision Finding
+
+No natural supported benchmark question triggered the bounded revision loop.
+
+The revision mechanism remains covered by deterministic production tests,
+but was not naturally exercised by the evaluation set.
+
+### Evaluation Artifacts
+
+Formal evaluation artifacts:
+
+`outputs/evaluation/evaluation_summary.json`
+
+`outputs/evaluation/headline_metrics.csv`
+
+`outputs/evaluation/supported_question_results.csv`
+
+`outputs/evaluation/fact_audit.csv`
+
+`outputs/evaluation/missed_facts.csv`
+
+`outputs/evaluation/classification_results.csv`
+
+`outputs/evaluation/unsupported_safety_results.csv`
+
+Evaluation notebook:
+
+`notebooks/08_evaluation.ipynb`
+
+### Next Phase
+
+Phase 10 - Application and Deployment.
+
+The next phase will expose the validated production service through the
+Streamlit application, finalize access controls and configuration, and
+prepare scale-to-zero portfolio deployment.

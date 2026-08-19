@@ -1058,3 +1058,114 @@ Validated:
 ### Next
 
 Phase 9 - Formal Evaluation.
+
+
+---
+
+## 2026-08-19 - Phase 9 - Formal Evaluation
+
+### Completed
+
+Completed the formal MetricGuard production benchmark.
+
+### Supported Evaluation
+
+Executed 10 production analytics-governance questions against quarantined
+ground truth.
+
+Execution success:
+
+100%
+
+Required facts:
+
+35
+
+### Answer Quality
+
+Human-audited factual coverage:
+
+82.86% (29 / 35)
+
+Fully complete answers:
+
+60% (6 / 10)
+
+Classification accuracy:
+
+80% (4 / 5)
+
+No manually audited required fact was found to be explicitly incorrect.
+
+Six required facts were omitted.
+
+### NLI Evaluator Audit
+
+Independent NLI evaluation initially measured 48.57% entailment coverage.
+
+Manual inspection exposed multiple false negatives.
+
+The NLI score is retained only as an auxiliary evaluator diagnostic rather
+than the primary factual metric.
+
+### Primary Failure Modes
+
+Observed weaknesses:
+
+1. incomplete deep lineage traversal in Q008
+2. stale semantic definition classified as intentional semantic difference
+3. high verification confidence relative to factual completeness
+4. no natural revision-loop activation during the supported benchmark
+
+### Retrieval and Sources
+
+Supported retrieval acceptance:
+
+100%
+
+Source presence:
+
+100%
+
+### Unsupported Safety Benchmark
+
+Evaluated 6 out-of-domain questions.
+
+Results:
+
+- rejection rate: 100%
+- false acceptance: 0%
+- zero-LLM execution: 100%
+- maximum unsupported rerank score: 0.012
+- relevance threshold: 0.27
+
+All six unsupported queries exited before Gemini investigation and
+verification.
+
+### Runtime
+
+Mean supported-query latency:
+
+approximately 65.13 seconds
+
+Mean unsupported-query latency:
+
+approximately 3.45 seconds
+
+Supported benchmark LLM calls:
+
+20
+
+### Artifacts
+
+Saved formal benchmark artifacts under:
+
+`outputs/evaluation/`
+
+Saved formal evaluation notebook:
+
+`notebooks/08_evaluation.ipynb`
+
+### Next
+
+Phase 10 - Application and Deployment.
