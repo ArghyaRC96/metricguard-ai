@@ -10,3 +10,5 @@ google-genai
 langgraph
 qdrant-client
 sentence-transformers
+streamlit==1.60.0
+Authlib>=1.3.2
