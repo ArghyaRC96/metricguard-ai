@@ -549,15 +549,15 @@ with st.sidebar:
 **Production pipeline**
 
 Question  
-?  
+->  
 Retrieve + rerank  
-?  
+->  
 Relevance gate  
-?  
+->  
 Metric investigation  
-?  
+->  
 Independent verification  
-?  
+->  
 Grounded answer
 """
     )
@@ -579,7 +579,7 @@ Grounded answer
         st.divider()
 
         st.subheader(
-            "?? Knowledge Base Admin"
+            "Knowledge Base Admin"
         )
 
         st.caption(
