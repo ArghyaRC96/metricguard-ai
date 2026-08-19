@@ -1169,3 +1169,88 @@ Saved formal evaluation notebook:
 ### Next
 
 Phase 10 - Application and Deployment.
+
+<!-- BUILD_LOG_PHASE_10_COMPLETE -->
+
+## 2026-08-19 ? Phase 10 Production Deployment Complete
+
+Completed the production application and deployment phase for MetricGuard AI.
+
+### Application layer
+
+- Built production Streamlit application.
+- Added production bootstrap assembly.
+- Added Google OIDC authentication.
+- Added Guest, Viewer, and Admin RBAC modes.
+- Added recruiter-friendly no-login Guest Demo.
+- Added sample investigation shortcuts.
+- Added protected knowledge-base administration UI.
+- Added deterministic application tests.
+
+### Persistent retrieval
+
+- Added production Qdrant indexing package.
+- Added deterministic UUID generation for chunk point IDs.
+- Preserved chunk content and governance/lineage metadata in Qdrant payloads.
+- Added collection replacement and batched upsert logic.
+- Added post-index point-count validation.
+- Corrected production repository-root discovery.
+
+### Qdrant Cloud
+
+Created persistent production collection:
+
+`metricguard_dense_v1`
+
+Validated:
+
+- 167 embedding-ready chunks
+- 167 persisted Qdrant points
+- 768-dimensional MPNet vectors
+- cosine distance
+- collection status green
+
+### Production runtime
+
+Configured:
+
+- `sentence-transformers/all-mpnet-base-v2`
+- `cross-encoder/ms-marco-MiniLM-L6-v2`
+- Gemini `gemini-3.7-flash`
+- persistent Qdrant Cloud
+- mandatory reranking
+- calibrated relevance gate
+- bounded LangGraph revision
+- structured sources and confidence
+
+### Deployment
+
+Deployed successfully to Streamlit Community Cloud:
+
+`https://metricguard-ai.streamlit.app`
+
+Resolved deployment-specific issues:
+
+- `src/` package import path on Streamlit Cloud
+- production repository-root resolution
+- Qdrant runtime secrets
+- Gemini runtime secret injection
+- Google OAuth production callback
+- Streamlit Cloud secret configuration
+- corrupted sidebar/UI labels
+
+### Browser validation
+
+Successfully validated:
+
+- public Guest mode
+- recruiter-friendly no-login access
+- Google sign-in
+- Admin role resolution
+- production Qdrant retrieval
+- agentic investigation
+- grounded answer generation
+- source evidence rendering
+- confidence and relevance metrics
+
+Phase 10 is complete.

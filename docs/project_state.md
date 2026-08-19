@@ -2514,3 +2514,172 @@ Phase 10 - Application and Deployment.
 The next phase will expose the validated production service through the
 Streamlit application, finalize access controls and configuration, and
 prepare scale-to-zero portfolio deployment.
+
+<!-- PHASE_10_PRODUCTION_START -->
+
+## Phase 10 ? Production Application & Deployment
+
+**Status: COMPLETE**
+
+### Live deployment
+
+- Production URL: `https://metricguard-ai.streamlit.app`
+- Deployment platform: Streamlit Community Cloud
+- Production vector database: Qdrant Cloud
+- Qdrant collection: `metricguard_dense_v1`
+- Indexed production chunks: 167
+- Embedding dimension: 768
+- Collection status validated as green
+
+### Application access model
+
+MetricGuard now supports three access modes:
+
+#### Guest
+
+- No authentication required.
+- Intended for recruiters, hiring managers, portfolio reviewers, and public demo users.
+- Can investigate supported metric-governance questions.
+- Can view grounded answers, findings, sources, confidence, and execution trace.
+- Cannot perform knowledge-base administration.
+
+#### Viewer
+
+- Authenticated Google user.
+- Read-only investigation access.
+- Cannot mutate the production knowledge base.
+
+#### Admin
+
+- Resolved through Google OIDC plus MetricGuard RBAC.
+- Can investigate metrics.
+- Can access protected knowledge-base administration controls.
+- Production rebuild control is restricted to Admin access.
+
+### Authentication and authorization
+
+- Google OIDC implemented with Streamlit authentication.
+- Local OAuth callback:
+  `http://localhost:8501/oauth2callback`
+- Production OAuth callback:
+  `https://metricguard-ai.streamlit.app/oauth2callback`
+- Application secrets are excluded from Git.
+- Production secrets are supplied through Streamlit Community Cloud secrets.
+- Recruiter Guest mode deliberately avoids authentication friction.
+
+### Production retrieval stack
+
+1. Query normalization
+2. Dense query embedding
+3. Persistent Qdrant retrieval
+4. Candidate retrieval: 20
+5. Mandatory CrossEncoder reranking
+6. Final evidence set: 5
+7. Calibrated relevance gate
+8. Governance/version/freshness interpretation
+9. Lineage and impact context
+10. Agentic investigation
+11. Independent verification/reporting
+12. Grounded structured result
+13. Sources
+14. Confidence
+15. Audit/execution trace
+
+### Models
+
+- Embedding model:
+  `sentence-transformers/all-mpnet-base-v2`
+- Reranker:
+  `cross-encoder/ms-marco-MiniLM-L6-v2`
+- LLM:
+  `gemini-3.7-flash`
+- Agent revision limit:
+  `max_revisions=1`
+
+### Production indexing
+
+A production indexing layer now bridges:
+
+`fully_enriched_chunks.jsonl`
+? embedding generation
+? deterministic Qdrant point IDs
+? collection creation/replacement
+? batched upsert
+? point-count validation
+
+Current production index validation:
+
+- Expected chunks: 167
+- Qdrant points: 167
+- Vector dimension: 768
+- Status: green
+
+### Streamlit application
+
+The production UI includes:
+
+- Recruiter-facing Guest Demo.
+- Sample investigation shortcuts.
+- Investigation form.
+- Decision and diagnosis.
+- Confidence.
+- Top-1 relevance score.
+- Grounded answer.
+- Key findings.
+- Evidence sources.
+- Agent execution trace.
+- Google sign-in/sign-out.
+- Role display.
+- Admin-only knowledge-base controls.
+
+### Deployment fixes completed
+
+- Production `src/` package made importable on Streamlit Community Cloud.
+- Production repository-root resolution corrected.
+- Runtime Qdrant and Gemini secrets explicitly injected into the application bootstrap.
+- Persistent Qdrant endpoint configured.
+- Google production OAuth callback configured.
+- Windows-corrupted UI labels cleaned.
+
+### Final production validation
+
+Confirmed working:
+
+- Public Guest access.
+- Google authentication.
+- Admin RBAC resolution.
+- Persistent Qdrant retrieval.
+- Agentic investigation.
+- Gemini inference.
+- Grounded answers.
+- Key findings.
+- Evidence-source rendering.
+- Confidence and relevance display.
+- Production deployment.
+
+### Phase 9 benchmark retained
+
+- Supported questions: 10
+- Required facts: 35
+- Execution success: 100%
+- Human-audited factual coverage: 82.86% (29/35)
+- Missing facts: 6
+- Incorrect facts: 0
+- Full-question factual accuracy: 60%
+- Classification accuracy: 80%
+- Supported retrieval acceptance: 100%
+- Source presence: 100%
+- Mean confidence: 0.968
+- Revision rate: 0
+- Unsupported questions: 6
+- Unsupported rejection rate: 100%
+- False acceptance rate: 0%
+- Unsupported LLM invocation rate: 0%
+
+### Current project state
+
+MetricGuard AI has progressed from notebook experimentation to a deployable production-style Agentic RAG portfolio application.
+
+The primary implementation roadmap through Phase 10 is complete.
+
+<!-- PHASE_10_PRODUCTION_END -->
